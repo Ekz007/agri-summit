@@ -86,7 +86,7 @@ export function PortalShell({
       {/* roots spreading across the platform — blue base, golden root */}
       <OrganicBg variant="hero" className="fixed inset-0 opacity-[0.35]" />
       {/* Top bar (mobile) */}
-      <div className="sticky top-0 z-40 flex items-center justify-between border-b border-white/10 bg-forest-950/80 px-4 py-3 backdrop-blur-xl lg:hidden">
+      <div className="sticky top-0 z-40 flex items-center justify-between border-b border-white/15 bg-white/[0.06] px-4 py-3 backdrop-blur-2xl lg:hidden">
         <Link href="/portal">
           <Logo compact showYear={false} />
         </Link>
@@ -99,7 +99,7 @@ export function PortalShell({
         {/* Sidebar */}
         <aside
           className={cn(
-            "fixed inset-y-0 left-0 z-50 w-72 flex-col justify-between border-r border-white/10 bg-forest-950 p-5 transition-transform lg:static lg:flex lg:translate-x-0",
+            "fixed inset-y-0 left-0 z-50 w-72 flex-col justify-between border-r border-white/15 bg-white/[0.06] p-5 backdrop-blur-2xl transition-transform lg:static lg:flex lg:translate-x-0",
             open ? "flex translate-x-0" : "hidden -translate-x-full lg:flex"
           )}
         >

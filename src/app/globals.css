@@ -210,13 +210,16 @@ body {
   transform: none;
 }
 
-/* Portal theme — deep blue base with gold accents; retunes every token in scope */
+/* Portal theme — light cyan-blue base with gold accents; retunes every token in scope */
 .portal-theme {
-  --forest-950: #04202b;
-  --forest-900: #07303d;
-  --forest-800: #0b4150;
-  --forest-700: #0e5364;
+  --forest-950: #0a4152;
+  --forest-900: #0f5468;
+  --forest-800: #17657c;
+  --forest-700: #1e768f;
   --background: var(--forest-900);
+  background:
+    radial-gradient(90% 60% at 50% 0%, rgba(86, 183, 199, 0.35), transparent 70%),
+    linear-gradient(180deg, #11586d 0%, #0d4a5d 55%, #0a4152 100%);
 }
 .portal-theme ::selection {
   background: var(--gold-400);
