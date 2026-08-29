@@ -111,7 +111,7 @@ export function AdminPanel({
           <button
             onClick={() => run("match", gerarMatching)}
             disabled={pending}
-            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-green-500 px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-green-400 disabled:opacity-50"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full neon-green px-6 py-3 text-sm font-semibold disabled:opacity-50"
           >
             {busy("match") ? <Loader2 className="h-4 w-4 animate-spin" /> : <Cpu className="h-4 w-4" />}
             Gerar matching & agenda

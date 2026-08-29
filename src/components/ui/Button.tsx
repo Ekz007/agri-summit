@@ -8,8 +8,7 @@ const base =
   "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap";
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-green-500 text-ink hover:bg-green-400 shadow-[0_8px_30px_-8px_rgba(127,181,57,0.6)]",
+  primary: "neon-green",
   gold: "bg-gold-500 text-ink hover:bg-gold-400 shadow-[0_8px_30px_-8px_rgba(217,177,90,0.55)]",
   ghost: "bg-white/5 text-cream hover:bg-white/10 border border-white/10",
   outline:

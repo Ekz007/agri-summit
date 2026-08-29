@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { OrganicBg } from "@/components/brand/OrganicBg";
+import { NeonTraces } from "@/components/brand/NeonTraces";
 import { cn } from "@/lib/utils";
 import type { Profile, UserRole } from "@/lib/supabase/types";
 import { signOut } from "@/app/portal/actions";
@@ -85,6 +86,8 @@ export function PortalShell({
     <div className="portal-theme relative min-h-screen bg-forest-900 text-cream">
       {/* roots spreading across the platform — blue base, golden root */}
       <OrganicBg variant="hero" className="fixed inset-0 opacity-[0.35]" />
+      {/* neon blue traces flowing through the background */}
+      <NeonTraces className="fixed inset-0 opacity-70" />
       {/* Top bar (mobile) */}
       <div className="sticky top-0 z-40 flex items-center justify-between border-b border-white/10 bg-forest-950/80 px-4 py-3 backdrop-blur-xl lg:hidden">
         <Link href="/portal">

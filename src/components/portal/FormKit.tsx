@@ -167,7 +167,7 @@ export function SaveButton({ label = "Salvar perfil" }: { label?: string }) {
         setSaved(false);
         setTimeout(() => setSaved(true), 900);
       }}
-      className="inline-flex items-center justify-center gap-2 rounded-full bg-green-500 px-7 py-3 text-sm font-semibold text-ink transition-colors hover:bg-green-400 disabled:opacity-50"
+      className="inline-flex items-center justify-center gap-2 rounded-full neon-green px-7 py-3 text-sm font-semibold disabled:opacity-50"
     >
       {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : saved ? <Check className="h-4 w-4" /> : null}
       {pending ? "Salvando…" : label}

@@ -60,7 +60,7 @@ export function InscricoesTable({
               onClick={() => setTab(t)}
               className={cn(
                 "flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold capitalize transition-colors",
-                tab === t ? "bg-green-500 text-ink" : "text-cream/70 hover:text-cream"
+                tab === t ? "neon-green" : "text-cream/70 hover:text-cream"
               )}
             >
               {t === "startups" ? <Rocket className="h-4 w-4" /> : <Landmark className="h-4 w-4" />}

@@ -223,6 +223,39 @@ body {
   color: var(--ink);
 }
 
+/* Neon green — CTA glow */
+.neon-green {
+  background: linear-gradient(180deg, #b3e558, #7fb539);
+  color: var(--ink);
+  box-shadow:
+    0 0 14px rgba(154, 203, 78, 0.55),
+    0 0 36px rgba(127, 181, 57, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+.neon-green:hover {
+  box-shadow:
+    0 0 20px rgba(154, 203, 78, 0.85),
+    0 0 56px rgba(127, 181, 57, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Neon blue traces — animated dashes with glow */
+.neon-trace {
+  stroke-dasharray: 3 16;
+  stroke-linecap: round;
+  animation: flow-loop 26s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(86, 183, 199, 0.9)) drop-shadow(0 0 14px rgba(47, 154, 168, 0.5));
+}
+.neon-trace-slow {
+  animation-duration: 40s;
+  animation-direction: reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-trace, .neon-trace-slow { animation: none; }
+}
+
 /* Film grain — kills the flat AI-gradient look */
 .grain::before {
   content: "";
