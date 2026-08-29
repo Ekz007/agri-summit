@@ -77,27 +77,27 @@ export function OrganicBg({
             </linearGradient>
           </defs>
           <g stroke="url(#root-gold)" strokeLinecap="round" strokeLinejoin="round">
-            {/* tronco */}
-            <path d="M330 -20 C 315 90, 345 200, 325 320" strokeWidth="12" />
-            <path d="M325 320 C 308 430, 342 540, 324 650" strokeWidth="8" />
-            <path d="M324 650 C 310 740, 338 840, 328 950" strokeWidth="5" />
+            {/* tronco — nasce no canto superior direito e desce em diagonal */}
+            <path d="M510 -20 C 455 70, 428 185, 388 305" strokeWidth="12" />
+            <path d="M388 305 C 350 420, 352 540, 322 650" strokeWidth="8" />
+            <path d="M322 650 C 300 740, 310 845, 292 950" strokeWidth="5" />
 
             {/* ramo esquerdo superior */}
-            <path d="M327 150 C 296 245, 252 330, 202 418" strokeWidth="5" />
-            <path d="M202 418 C 174 476, 158 546, 142 612" strokeWidth="2.4" />
-            <path d="M232 365 C 200 420, 172 468, 134 520" strokeWidth="1.5" opacity="0.85" />
+            <path d="M430 180 C 358 248, 288 312, 214 376" strokeWidth="5" />
+            <path d="M214 376 C 162 422, 132 488, 112 552" strokeWidth="2.4" />
+            <path d="M288 312 C 240 350, 202 396, 162 438" strokeWidth="1.5" opacity="0.85" />
 
             {/* ramo direito */}
-            <path d="M324 335 C 368 422, 408 500, 434 586" strokeWidth="4.5" />
-            <path d="M434 586 C 450 648, 459 720, 466 790" strokeWidth="2.2" />
-            <path d="M410 505 C 438 543, 466 570, 492 600" strokeWidth="1.5" opacity="0.85" />
+            <path d="M390 300 C 422 398, 442 488, 452 578" strokeWidth="4.5" />
+            <path d="M452 578 C 460 648, 464 718, 467 788" strokeWidth="2.2" />
+            <path d="M438 478 C 462 514, 478 546, 494 580" strokeWidth="1.5" opacity="0.85" />
 
             {/* ramo esquerdo inferior */}
-            <path d="M326 520 C 294 598, 268 672, 242 748" strokeWidth="3.5" />
-            <path d="M242 748 C 228 800, 220 856, 212 910" strokeWidth="1.8" />
+            <path d="M338 560 C 298 630, 268 700, 242 770" strokeWidth="3.5" />
+            <path d="M242 770 C 226 820, 218 866, 210 912" strokeWidth="1.8" />
 
             {/* ramo direito curto */}
-            <path d="M329 720 C 362 778, 384 832, 398 890" strokeWidth="2.6" />
+            <path d="M312 720 C 342 780, 356 836, 366 892" strokeWidth="2.6" />
           </g>
         </svg>
       )}
