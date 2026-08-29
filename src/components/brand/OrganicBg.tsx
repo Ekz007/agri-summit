@@ -58,35 +58,49 @@ export function OrganicBg({
           opacity="0.8"
         />
 
-        {variant === "hero" && (
-          /* raiz dourada: tronco fino que afina + ramificações e radículas */
-          <g stroke="url(#og-gold)" fill="none" strokeLinecap="round">
-            {/* raiz principal (afinando ao descer) */}
-            <path d="M1245 -40 C 1215 160, 1290 330, 1235 540" strokeWidth="9" />
-            <path d="M1235 540 C 1200 680, 1275 810, 1250 950" strokeWidth="5.5" />
-
-            {/* ramificações primárias */}
-            <path d="M1232 170 C 1140 215, 1075 295, 1000 330" strokeWidth="3.5" />
-            <path d="M1262 300 C 1330 355, 1375 425, 1425 465" strokeWidth="3.5" />
-            <path d="M1240 470 C 1155 530, 1110 610, 1050 650" strokeWidth="3" />
-            <path d="M1255 650 C 1320 705, 1355 770, 1395 815" strokeWidth="2.5" />
-
-            {/* ramificações secundárias */}
-            <path d="M1000 330 C 950 352, 918 402, 872 424" strokeWidth="2" />
-            <path d="M1050 650 C 1010 678, 990 726, 952 750" strokeWidth="1.8" />
-            <path d="M1425 465 C 1452 488, 1462 528, 1482 550" strokeWidth="1.8" />
-            <path d="M1075 295 C 1040 275, 1020 240, 985 225" strokeWidth="1.6" />
-
-            {/* radículas */}
-            <path d="M872 424 C 845 435, 828 462, 800 472" strokeWidth="1.2" opacity="0.8" />
-            <path d="M952 750 C 928 762, 915 786, 892 796" strokeWidth="1.2" opacity="0.8" />
-            <path d="M1330 355 C 1352 335, 1380 328, 1400 310" strokeWidth="1.4" opacity="0.8" />
-            <path d="M1155 530 C 1130 518, 1112 492, 1085 482" strokeWidth="1.3" opacity="0.8" />
-            <path d="M1215 160 C 1190 130, 1188 95, 1168 68" strokeWidth="1.5" opacity="0.8" />
-          </g>
-        )}
-
       </svg>
+
+      {variant === "hero" && (
+        /* Raiz dourada em SVG próprio, ancorado à direita: sempre aparece
+           inteira, em qualquer largura de container. Tronco que afila,
+           ramos tangentes fluindo para baixo. */
+        <svg
+          className="absolute right-0 top-0 h-full opacity-70"
+          viewBox="0 0 500 900"
+          preserveAspectRatio="xMaxYMid meet"
+          fill="none"
+        >
+          <defs>
+            <linearGradient id="root-gold" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#e6c574" stopOpacity="0.85" />
+              <stop offset="1" stopColor="#d9b15a" stopOpacity="0.45" />
+            </linearGradient>
+          </defs>
+          <g stroke="url(#root-gold)" strokeLinecap="round" strokeLinejoin="round">
+            {/* tronco */}
+            <path d="M330 -20 C 315 90, 345 200, 325 320" strokeWidth="12" />
+            <path d="M325 320 C 308 430, 342 540, 324 650" strokeWidth="8" />
+            <path d="M324 650 C 310 740, 338 840, 328 950" strokeWidth="5" />
+
+            {/* ramo esquerdo superior */}
+            <path d="M327 150 C 296 245, 252 330, 202 418" strokeWidth="5" />
+            <path d="M202 418 C 174 476, 158 546, 142 612" strokeWidth="2.4" />
+            <path d="M232 365 C 200 420, 172 468, 134 520" strokeWidth="1.5" opacity="0.85" />
+
+            {/* ramo direito */}
+            <path d="M324 335 C 368 422, 408 500, 434 586" strokeWidth="4.5" />
+            <path d="M434 586 C 450 648, 459 720, 466 790" strokeWidth="2.2" />
+            <path d="M410 505 C 438 543, 466 570, 492 600" strokeWidth="1.5" opacity="0.85" />
+
+            {/* ramo esquerdo inferior */}
+            <path d="M326 520 C 294 598, 268 672, 242 748" strokeWidth="3.5" />
+            <path d="M242 748 C 228 800, 220 856, 212 910" strokeWidth="1.8" />
+
+            {/* ramo direito curto */}
+            <path d="M329 720 C 362 778, 384 832, 398 890" strokeWidth="2.6" />
+          </g>
+        </svg>
+      )}
     </div>
   );
 }
