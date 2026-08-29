@@ -1,26 +1,185 @@
 @import "tailwindcss";
 
+/* ============================================================
+   AGRI SUMMIT BRAZIL 2027 — Design System
+   Palette drawn from the CNA/SENAR creative concept:
+   deep forest & petrol green, golden wheat, agro-green, cream.
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --forest-950: #052b21;
+  --forest-900: #073a2c;
+  --forest-800: #0a4d3a;
+  --forest-700: #0c5c45;
+  --petrol-700: #0b5f60;
+  --petrol-600: #12787a;
+  --petrol-500: #1a9698;
+  --green-500: #7fb539;
+  --green-400: #9acb4e;
+  --gold-500: #d9b15a;
+  --gold-400: #e6c574;
+  --gold-300: #f0d79a;
+  --cream: #f4f1e6;
+  --cream-dim: #e7e2d1;
+  --ink: #06231b;
+
+  --background: var(--forest-900);
+  --foreground: var(--cream);
 }
 
 @theme inline {
+  --color-forest-950: var(--forest-950);
+  --color-forest-900: var(--forest-900);
+  --color-forest-800: var(--forest-800);
+  --color-forest-700: var(--forest-700);
+  --color-petrol-700: var(--petrol-700);
+  --color-petrol-600: var(--petrol-600);
+  --color-petrol-500: var(--petrol-500);
+  --color-green-500: var(--green-500);
+  --color-green-400: var(--green-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-400: var(--gold-400);
+  --color-gold-300: var(--gold-300);
+  --color-cream: var(--cream);
+  --color-cream-dim: var(--cream-dim);
+  --color-ink: var(--ink);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xl2: 1.25rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: color-mix(in oklab, var(--cream) 12%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--green-500);
+  color: var(--ink);
+}
+
+/* Display headings — tight, geometric */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Numeric font-weight utilities (used with .font-display) */
+.font-400 { font-weight: 400; }
+.font-500 { font-weight: 500; }
+.font-600 { font-weight: 600; }
+.font-700 { font-weight: 700; }
+.font-800 { font-weight: 800; }
+
+/* Utility: gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(100deg, var(--gold-300), var(--gold-500) 60%, var(--green-500));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glass surface used across portal + cards */
+.surface {
+  background: color-mix(in oklab, var(--forest-800) 78%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in oklab, var(--cream) 10%, transparent);
+}
+
+.surface-solid {
+  background: var(--forest-800);
+  border: 1px solid color-mix(in oklab, var(--cream) 9%, transparent);
+}
+
+/* Grain / vignette helpers */
+.vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 80% at 50% 0%, transparent 40%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+/* Focus ring */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--green-400);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ---- Animations (skiper/cult-ui inspired) ---- */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(1.5deg); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--green-500) 55%, transparent); }
+  70% { box-shadow: 0 0 0 16px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@keyframes grow-line {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
+.animate-rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-pulse-ring { animation: pulse-ring 2.4s ease-out infinite; }
+
+.shimmer {
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    color-mix(in oklab, var(--gold-300) 55%, transparent) 50%,
+    transparent 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.6s linear infinite;
+}
+
+/* Reveal-on-scroll (used by <Reveal/>) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow, .animate-pulse-ring, .shimmer { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Thin custom scrollbar for portal panels */
+.scroll-slim::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-slim::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--petrol-500) 60%, transparent);
+  border-radius: 8px;
 }
