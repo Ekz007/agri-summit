@@ -22,8 +22,12 @@ export function OrganicBg({
       >
         <defs>
           <linearGradient id="og-petrol" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#12787a" stopOpacity="0.55" />
-            <stop offset="1" stopColor="#0b5f60" stopOpacity="0.15" />
+            <stop offset="0" stopColor="#147d92" stopOpacity="0.55" />
+            <stop offset="1" stopColor="#0c4453" stopOpacity="0.15" />
+          </linearGradient>
+          <linearGradient id="og-ocean" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stopColor="#2f9aa8" stopOpacity="0.5" />
+            <stop offset="1" stopColor="#0e5a6b" stopOpacity="0.12" />
           </linearGradient>
           <linearGradient id="og-gold" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#e6c574" stopOpacity="0.9" />
@@ -47,11 +51,11 @@ export function OrganicBg({
         />
         <path
           d="M-120 620 C 300 520, 560 760, 900 640 S 1400 560, 1620 700"
-          stroke="url(#og-petrol)"
+          stroke="url(#og-ocean)"
           strokeWidth="90"
           strokeLinecap="round"
           fill="none"
-          opacity="0.7"
+          opacity="0.8"
         />
 
         {variant === "hero" && (

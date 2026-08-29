@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowRight,
   MapPin,
@@ -45,26 +46,27 @@ function Hero() {
   return (
     <section className="relative overflow-hidden vignette min-h-[100svh] flex items-center">
       <AuroraBg />
-      <OrganicBg variant="hero" />
-      <div className="absolute inset-0 bg-gradient-to-b from-forest-950/40 via-transparent to-forest-900" />
+      <OrganicBg variant="hero" className="opacity-70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ocean-900/50 via-transparent to-forest-900" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 pt-32 pb-20">
-        <div className="max-w-3xl">
-          <div className="animate-rise inline-flex items-center gap-2 rounded-full border border-green-400/30 bg-green-500/10 px-4 py-1.5 text-sm text-green-300">
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 pt-32 pb-24 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pb-16">
+        {/* Text column */}
+        <div>
+          <div className="animate-rise inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-ocean-600/15 px-4 py-1.5 text-sm text-sky-400">
             <Sparkles className="h-4 w-4" />
             A Revolução do Agronegócio Digital e Sustentável
           </div>
 
-          <h1 className="animate-rise mt-6 font-display font-800 leading-[0.92] tracking-tight text-cream text-[clamp(2.75rem,8vw,5.5rem)]">
+          <h1 className="animate-rise mt-6 font-display font-800 leading-[0.9] tracking-tight text-cream text-[clamp(2.6rem,6.5vw,4.8rem)]">
             AGRI SUMMIT
             <br />
             <span className="text-gold-gradient">BRAZIL 2027</span>
           </h1>
 
-          <p className="animate-rise mt-6 max-w-xl text-lg text-cream/80">
+          <p className="animate-rise mt-5 max-w-lg text-lg text-cream/80">
             Produzindo a inovação. Inovando a produção. A plataforma que conecta{" "}
-            <strong className="text-cream">startups, investidores, indústria e ciência</strong> —
-            onde a inovação encontra aplicação real.
+            <strong className="text-cream">startups, investidores, indústria e ciência</strong>.
+            Onde a inovação encontra aplicação real.
           </p>
 
           <div className="animate-rise mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -76,16 +78,16 @@ function Hero() {
             </ButtonLink>
           </div>
 
-          <dl className="animate-rise mt-12 flex flex-wrap gap-x-10 gap-y-4 text-cream/85">
+          <dl className="animate-rise mt-10 flex flex-wrap gap-x-10 gap-y-4 text-cream/85">
             <div className="flex items-center gap-2.5">
-              <CalendarDays className="h-5 w-5 text-green-400" />
+              <CalendarDays className="h-5 w-5 text-sky-400" />
               <div>
                 <dt className="text-xs uppercase tracking-wider text-cream/50">Quando</dt>
                 <dd className="font-semibold">02 – 04 de março de 2027</dd>
               </div>
             </div>
             <div className="flex items-center gap-2.5">
-              <MapPin className="h-5 w-5 text-green-400" />
+              <MapPin className="h-5 w-5 text-sky-400" />
               <div>
                 <dt className="text-xs uppercase tracking-wider text-cream/50">Onde</dt>
                 <dd className="font-semibold">Anhembi · São Paulo</dd>
@@ -93,10 +95,25 @@ function Hero() {
             </div>
           </dl>
         </div>
+
+        {/* Real AI key-art (people composite) */}
+        <div className="animate-rise relative">
+          <div className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-ocean-500/25 via-transparent to-gold-500/20 blur-2xl" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl shadow-ocean-900/50">
+            <Image
+              src="/brand/hero-people.webp"
+              alt="Produtor, cientista e investidor do agronegócio brasileiro · Agri Summit Brazil 2027"
+              width={1400}
+              height={1408}
+              priority
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-        <Realizadores />
+        <Realizadores size="sm" />
       </div>
     </section>
   );
@@ -111,7 +128,7 @@ function ContinuumStrip() {
     <div className="border-y border-white/10 bg-forest-950/60">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-5 py-5 text-center">
         <span className="text-sm text-cream/60">
-          Não apenas um evento — uma plataforma contínua de negócios
+          Não apenas um evento, uma plataforma contínua de negócios
         </span>
         <div className="flex items-center gap-3">
           {items.map((i, idx) => (
@@ -176,7 +193,7 @@ function Rodadas() {
     {
       icon: Cpu,
       title: "Matching por algoritmo",
-      body: "Antes do evento, cruzamos os dados de cada startup com a tese de cada investidor. O algoritmo gera as agendas e o mapa de mesas — todo mundo chega sabendo com quem vai conversar.",
+      body: "Antes do evento, cruzamos os dados de cada startup com a tese de cada investidor. O algoritmo gera as agendas e o mapa de mesas. Todo mundo chega sabendo com quem vai conversar.",
     },
     {
       icon: Table2,
@@ -186,12 +203,12 @@ function Rodadas() {
     {
       icon: Timer,
       title: "15 min de conversa + 5 min de troca",
-      body: "Cada rodada tem 15 minutos de pitch. Nos 5 minutos de intervalo as startups trocam de mesa — e o investidor preenche o formulário de avaliação daquela conversa.",
+      body: "Cada rodada tem 15 minutos de pitch. Nos 5 minutos de intervalo as startups trocam de mesa, e o investidor preenche o formulário de avaliação daquela conversa.",
     },
     {
       icon: ClipboardCheck,
       title: "Feedback estruturado",
-      body: "Interesse, fit e próximos passos são registrados na hora. Ao final, cada lado sai com um relatório do que aconteceu — o follow-up começa ainda no evento.",
+      body: "Interesse, fit e próximos passos são registrados na hora. Ao final, cada lado sai com um relatório do que aconteceu. O follow-up começa ainda no evento.",
     },
   ];
 
@@ -214,7 +231,7 @@ function Rodadas() {
             <Reveal delay={140}>
               <p className="mt-5 max-w-lg text-lg text-cream/80">
                 Speed-dating de investimento com inteligência de dados. Um algoritmo conecta as{" "}
-                startups certas aos investidores certos — e orquestra uma agenda milimétrica ao
+                startups certas aos investidores certos, e orquestra uma agenda milimétrica ao
                 longo de dois dias de rodadas.
               </p>
             </Reveal>
@@ -294,7 +311,7 @@ function RoundClockCard() {
 
       <div className="mt-5 flex items-center justify-between rounded-xl bg-gold-500/10 px-4 py-3 text-sm">
         <span className="flex items-center gap-2 text-gold-300">
-          <Timer className="h-4 w-4" /> Intervalo — troca de mesa
+          <Timer className="h-4 w-4" /> Intervalo · troca de mesa
         </span>
         <span className="font-display font-700 tabular-nums text-gold-300">05:00</span>
       </div>
@@ -310,14 +327,14 @@ function Formato() {
     {
       dia: "Dia 1",
       data: "02 mar",
-      title: "Abertura & Rodadas — Bloco A",
+      title: "Abertura & Rodadas · Bloco A",
       body: "100 startups e 50 investidores. Painéis de abertura pela manhã, rodadas de negócio à tarde com agenda gerada por algoritmo.",
       tags: ["100 startups", "50 investidores", "Rodadas"],
     },
     {
       dia: "Dia 2",
       data: "03 mar",
-      title: "Rodadas — Bloco B & Conteúdo",
+      title: "Rodadas · Bloco B & Conteúdo",
       body: "Segundo dia de rodadas, palcos de conteúdo, demo day e ativações de marca com indústria e ciência.",
       tags: ["Rodadas", "Demo Day", "Conteúdo"],
     },

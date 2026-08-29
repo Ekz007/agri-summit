@@ -14,6 +14,12 @@
   --petrol-700: #0b5f60;
   --petrol-600: #12787a;
   --petrol-500: #1a9698;
+  --ocean-900: #08323f;
+  --ocean-800: #0c4453;
+  --ocean-700: #0e5a6b;
+  --ocean-600: #147d92;
+  --ocean-500: #2f9aa8;
+  --sky-400: #56b7c7;
   --green-500: #7fb539;
   --green-400: #9acb4e;
   --gold-500: #d9b15a;
@@ -35,6 +41,12 @@
   --color-petrol-700: var(--petrol-700);
   --color-petrol-600: var(--petrol-600);
   --color-petrol-500: var(--petrol-500);
+  --color-ocean-900: var(--ocean-900);
+  --color-ocean-800: var(--ocean-800);
+  --color-ocean-700: var(--ocean-700);
+  --color-ocean-600: var(--ocean-600);
+  --color-ocean-500: var(--ocean-500);
+  --color-sky-400: var(--sky-400);
   --color-green-500: var(--green-500);
   --color-green-400: var(--green-400);
   --color-gold-500: var(--gold-500);

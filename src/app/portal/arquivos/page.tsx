@@ -32,7 +32,7 @@ export default async function ArquivosPage() {
         <EmptyState
           icon={FolderOpen}
           title="Nenhum arquivo por aqui ainda"
-          body="Os materiais oficiais — guia das rodadas, apresentações e regulamentos — aparecem aqui assim que forem publicados pela organização."
+          body="Os materiais oficiais (guia das rodadas, apresentações e regulamentos) aparecem aqui assim que forem publicados pela organização."
         />
       ) : (
         <div className="space-y-10">

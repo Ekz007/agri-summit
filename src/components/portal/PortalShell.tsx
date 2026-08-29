@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
+import { OrganicBg } from "@/components/brand/OrganicBg";
 import { cn } from "@/lib/utils";
 import type { Profile, UserRole } from "@/lib/supabase/types";
 import { signOut } from "@/app/portal/actions";
@@ -77,7 +78,9 @@ export function PortalShell({
   );
 
   return (
-    <div className="min-h-screen bg-forest-900 text-cream">
+    <div className="relative min-h-screen bg-forest-900 text-cream">
+      {/* roots spreading across the platform */}
+      <OrganicBg variant="soft" className="fixed inset-0 opacity-[0.18]" />
       {/* Top bar (mobile) */}
       <div className="sticky top-0 z-40 flex items-center justify-between border-b border-white/10 bg-forest-950/80 px-4 py-3 backdrop-blur-xl lg:hidden">
         <Link href="/portal">
@@ -88,7 +91,7 @@ export function PortalShell({
         </button>
       </div>
 
-      <div className="mx-auto flex max-w-[1400px]">
+      <div className="relative z-10 mx-auto flex max-w-[1400px]">
         {/* Sidebar */}
         <aside
           className={cn(

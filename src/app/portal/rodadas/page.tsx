@@ -78,7 +78,7 @@ export default async function RodadasPage() {
         mesa_numero: r.mesa_numero,
         score: r.score,
         status: r.status,
-        counterpartName: counterpart?.nome ?? "—",
+        counterpartName: counterpart?.nome ?? "A definir",
         counterpartMeta: isInvestidor
           ? counterpart?.setor ?? "Startup"
           : counterpart?.tipo ?? "Investidor",
@@ -95,7 +95,7 @@ export default async function RodadasPage() {
         title="Rodadas de Negócio"
         subtitle={
           isInvestidor
-            ? "Sua mesa é fixa — as startups giram até você. Registre a avaliação de cada conversa no intervalo."
+            ? "Sua mesa é fixa, as startups giram até você. Registre a avaliação de cada conversa no intervalo."
             : "Você gira entre as mesas. Confira horários e mesas e avalie cada conversa no intervalo."
         }
       />
@@ -104,7 +104,7 @@ export default async function RodadasPage() {
       <div className="mb-8 grid gap-4 sm:grid-cols-3">
         <InfoTile
           icon={isInvestidor ? Table2 : MapPin}
-          title={isInvestidor ? `Mesa ${entity?.mesa_numero ?? "—"}` : "Você em rotação"}
+          title={isInvestidor ? `Mesa ${entity?.mesa_numero ?? "a definir"}` : "Você em rotação"}
           body={isInvestidor ? "seu ponto fixo nas rodadas" : "siga a mesa de cada horário"}
         />
         <InfoTile icon={Clock} title="15 + 5 min" body="conversa + intervalo de troca" />

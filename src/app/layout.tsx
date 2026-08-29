@@ -17,7 +17,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Agri Summit Brazil 2027 — Produzindo a inovação. Inovando a produção.",
+  title: "Agri Summit Brazil 2027 · Produzindo a inovação. Inovando a produção.",
   description:
     "A plataforma que conecta startups, investidores, indústria e ciência do agronegócio. 02 a 04 de março de 2027 · Centro de Eventos Anhembi, São Paulo. Realização CNA/SENAR, Sebrae e Juntos Pelo Agro.",
   keywords: [

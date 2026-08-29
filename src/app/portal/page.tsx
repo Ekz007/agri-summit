@@ -81,7 +81,7 @@ export default async function PortalHome() {
         {role === "investidor" ? (
           <StatTile
             label="Sua mesa"
-            value={entity?.mesa_numero ? `Mesa ${entity.mesa_numero}` : "—"}
+            value={entity?.mesa_numero ? `Mesa ${entity.mesa_numero}` : "A definir"}
             hint="ponto fixo durante as rodadas"
             icon={Table2}
             tone="gold"

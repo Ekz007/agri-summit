@@ -29,7 +29,7 @@ export default function LoginPage() {
           </h2>
           <p className="mt-4 text-cream/70">
             Acesse o portal para gerenciar sua inscrição, baixar materiais e acompanhar sua agenda
-            de Rodadas de Negócio — gerada por algoritmo a partir do seu perfil.
+            de Rodadas de Negócio, gerada por algoritmo a partir do seu perfil.
           </p>
         </div>
         <div className="relative">

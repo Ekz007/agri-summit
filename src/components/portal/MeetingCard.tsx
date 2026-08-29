@@ -53,7 +53,7 @@ export function MeetingCard({
           <div className="font-display font-800 text-lg tabular-nums text-cream">
             {fmt(m.inicio)}
           </div>
-          <div className="text-[0.7rem] text-cream/45">— {fmt(m.fim)}</div>
+          <div className="text-[0.7rem] text-cream/45">até {fmt(m.fim)}</div>
         </div>
 
         {/* body */}
@@ -93,7 +93,7 @@ export function MeetingCard({
       {open && (
         <div className="border-t border-white/8 bg-forest-950/40 p-5">
           <div className="mb-4 flex items-center gap-2 rounded-lg bg-gold-500/10 px-3 py-2 text-sm text-gold-300">
-            <Timer className="h-4 w-4" /> Intervalo de {m.intervalo} min — registre agora, antes da
+            <Timer className="h-4 w-4" /> Intervalo de {m.intervalo} min · registre agora, antes da
             próxima rodada.
           </div>
           <FeedbackForm
