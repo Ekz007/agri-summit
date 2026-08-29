@@ -13,7 +13,7 @@ export default async function AgendaPage() {
   const [{ data: itens }, { data: palestrantes }] = await Promise.all([
     supabase
       .from("programacao")
-      .select("*, palestrantes(id,nome,cargo,empresa,bio,destaque)")
+      .select("*, palestrantes(id,nome,cargo,empresa,bio,destaque,foto_url)")
       .order("dia")
       .order("inicio"),
     supabase.from("palestrantes").select("*").order("ordem").order("nome"),
@@ -37,6 +37,7 @@ export default async function AgendaPage() {
           empresa: i.palestrantes.empresa,
           bio: i.palestrantes.bio,
           destaque: i.palestrantes.destaque,
+          foto: i.palestrantes.foto_url,
         }
       : null,
   }));
@@ -48,6 +49,7 @@ export default async function AgendaPage() {
     empresa: p.empresa,
     bio: p.bio,
     destaque: p.destaque,
+    foto: p.foto_url,
   }));
 
   return (

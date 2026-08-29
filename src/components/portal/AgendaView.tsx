@@ -26,7 +26,29 @@ export type PalestranteVM = {
   empresa: string | null;
   bio: string | null;
   destaque: boolean;
+  foto: string | null;
 };
+
+function Avatar({ p, size = 12 }: { p: PalestranteVM; size?: 10 | 12 | 14 }) {
+  const cls = { 10: "h-10 w-10", 12: "h-12 w-12", 14: "h-14 w-14" }[size];
+  return p.foto ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={p.foto}
+      alt={p.nome}
+      className={cn(cls, "shrink-0 rounded-full border border-gold-400/40 object-cover")}
+    />
+  ) : (
+    <div
+      className={cn(
+        cls,
+        "flex shrink-0 items-center justify-center rounded-full bg-gold-500/15 font-display text-lg text-gold-400"
+      )}
+    >
+      {p.nome.charAt(0)}
+    </div>
+  );
+}
 
 export type ItemVM = {
   id: string;
@@ -136,20 +158,23 @@ export function AgendaView({
                       </button>
                     )}
                     {i.palestrante && bioOpen === i.id && (
-                      <div className="mt-2 rounded-xl border border-white/10 bg-forest-950/50 p-4 text-sm">
-                        <p className="font-semibold text-cream">
-                          {i.palestrante.nome}
-                          <span className="ml-2 font-normal text-cream/60">
-                            {[i.palestrante.cargo, i.palestrante.empresa]
-                              .filter(Boolean)
-                              .join(" · ")}
-                          </span>
-                        </p>
-                        {i.palestrante.bio && (
-                          <p className="mt-1.5 leading-relaxed text-cream/75">
-                            {i.palestrante.bio}
+                      <div className="mt-2 flex gap-4 rounded-xl border border-white/10 bg-forest-950/50 p-4 text-sm">
+                        <Avatar p={i.palestrante} size={14} />
+                        <div>
+                          <p className="font-semibold text-cream">
+                            {i.palestrante.nome}
+                            <span className="ml-2 font-normal text-cream/60">
+                              {[i.palestrante.cargo, i.palestrante.empresa]
+                                .filter(Boolean)
+                                .join(" · ")}
+                            </span>
                           </p>
-                        )}
+                          {i.palestrante.bio && (
+                            <p className="mt-1.5 leading-relaxed text-cream/75">
+                              {i.palestrante.bio}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     )}
                   </div>
@@ -189,9 +214,7 @@ export function AgendaView({
                 </button>
               )}
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold-500/15 font-display text-lg text-gold-400">
-                  {p.nome.charAt(0)}
-                </div>
+                <Avatar p={p} />
                 <div className="min-w-0">
                   <p className="flex items-center gap-1.5 font-display font-700 text-cream">
                     {p.nome}
