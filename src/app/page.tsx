@@ -65,25 +65,25 @@ function Hero() {
       <OrganicBg variant="hero" className="opacity-70" />
       <div className="absolute inset-0 bg-gradient-to-b from-ocean-900/50 via-transparent to-forest-900" />
 
-      <div className="relative z-[2] mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 pt-32 pb-44 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pb-40">
-        <div>
-          <div className="animate-rise inline-flex items-center gap-2 border-l-2 border-gold-400 bg-white/[0.03] px-4 py-2 text-sm tracking-wide text-cream/90">
+      <div className="relative z-[2] mx-auto grid w-full max-w-7xl grid-cols-1 items-stretch gap-10 px-5 pt-32 pb-44 lg:grid-cols-[1.15fr_1fr] lg:gap-12 lg:pb-40">
+        <div className="flex flex-col justify-center py-4 lg:min-h-[560px]">
+          <div className="animate-rise inline-flex w-fit items-center gap-2 border-l-2 border-gold-400 bg-white/[0.03] px-5 py-2.5 text-sm tracking-[0.08em] uppercase text-cream/90">
             O agro que move o futuro
           </div>
 
-          <h1 className="animate-rise mt-6 font-display font-800 leading-[0.9] tracking-tight text-cream text-[clamp(2.6rem,6.5vw,4.8rem)]">
+          <h1 className="animate-rise mt-8 font-display font-800 leading-[0.88] tracking-tight text-cream text-[clamp(2.8rem,6.6vw,5.1rem)]">
             AGRI SUMMIT
             <br />
             <span className="text-gold-gradient">BRAZIL 2027</span>
           </h1>
 
-          <p className="animate-rise mt-5 max-w-lg text-lg text-cream/80">
+          <p className="animate-rise mt-7 max-w-xl text-lg leading-relaxed text-cream/80 sm:text-xl">
             O Brasil no centro da transformação global do agro. A plataforma que conecta{" "}
             <strong className="text-cream">startups, investidores, produtores e indústria</strong>{" "}
             em três dias de negócios, conteúdo e tecnologia.
           </p>
 
-          <div className="animate-rise mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="animate-rise mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <ButtonLink href="/login?tab=inscricao" variant="gold" size="lg">
               Faça sua inscrição <ArrowRight className="h-5 w-5" />
             </ButtonLink>
@@ -92,27 +92,27 @@ function Hero() {
             </ButtonLink>
           </div>
 
-          <dl className="animate-rise mt-10 flex flex-wrap gap-x-10 gap-y-4 text-cream/85">
-            <div className="flex items-center gap-2.5">
-              <CalendarDays className="h-5 w-5 text-sky-400" />
+          <dl className="animate-rise mt-12 flex flex-wrap gap-x-14 gap-y-5 border-t border-white/10 pt-8 text-cream/85">
+            <div className="flex items-center gap-3">
+              <CalendarDays className="h-6 w-6 text-sky-400" />
               <div>
                 <dt className="text-xs uppercase tracking-wider text-cream/50">Quando</dt>
-                <dd className="font-semibold">15 a 17 de junho de 2027</dd>
+                <dd className="text-lg font-semibold">15 a 17 de junho de 2027</dd>
               </div>
             </div>
-            <div className="flex items-center gap-2.5">
-              <MapPin className="h-5 w-5 text-sky-400" />
+            <div className="flex items-center gap-3">
+              <MapPin className="h-6 w-6 text-sky-400" />
               <div>
                 <dt className="text-xs uppercase tracking-wider text-cream/50">Onde</dt>
-                <dd className="font-semibold">Royal Palm Hall · Campinas, SP</dd>
+                <dd className="text-lg font-semibold">Royal Palm Hall · Campinas, SP</dd>
               </div>
             </div>
           </dl>
         </div>
 
-        <div className="animate-rise relative">
+        <div className="animate-rise relative h-full">
           <div className="pointer-events-none absolute -inset-6 bg-gradient-to-br from-ocean-500/25 via-transparent to-gold-500/20 blur-2xl" />
-          <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-ocean-900/50">
+          <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-ocean-900/50">
             <Image
               src="/brand/hero-people.webp"
               alt="Produtor, cientista e investidor do agronegócio brasileiro · Agri Summit Brazil 2027"
@@ -613,7 +613,7 @@ function Patrocinio() {
     { icon: Megaphone, t: "Ambientes proprietários e branding experience" },
   ];
   return (
-    <section id="patrocinio" className="relative overflow-hidden py-28">
+    <section id="patrocinio" className="relative overflow-hidden pt-28 pb-56">
       <Hills />
       <div className="relative z-[2] mx-auto max-w-7xl px-5">
         <Reveal>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import {
   CalendarRange,
   Users,
@@ -23,7 +24,8 @@ export default async function PortalHome() {
   const name = session?.profile?.full_name || session?.email?.split("@")[0] || "";
 
   if (role === "admin" || role === "staff") {
-    return <AdminHome supabase={supabase} name={name} />;
+    // o Início do admin é o dashboard completo
+    redirect("/portal/admin");
   }
 
   // ---- participant (startup / investidor) ----
@@ -169,43 +171,3 @@ export default async function PortalHome() {
   );
 }
 
-async function AdminHome({
-  supabase,
-  name,
-}: {
-  supabase: Awaited<ReturnType<typeof createClient>>;
-  name: string;
-}) {
-  const [{ count: startups }, { count: investidores }, { count: encontros }, { data: config }] =
-    await Promise.all([
-      supabase.from("startups").select("*", { count: "exact", head: true }),
-      supabase.from("investidores").select("*", { count: "exact", head: true }),
-      supabase.from("agenda").select("*", { count: "exact", head: true }),
-      supabase.from("evento_config").select("*").eq("id", 1).maybeSingle(),
-    ]);
-
-  return (
-    <div>
-      <PageHeader
-        title={`Administração`}
-        subtitle={`Olá, ${name}. Visão geral do evento e do motor de matching.`}
-        action={
-          <ButtonLink href="/portal/admin" variant="primary" size="md">
-            Abrir painel <ArrowRight className="h-4 w-4" />
-          </ButtonLink>
-        }
-      />
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <StatTile label="Startups" value={startups ?? 0} icon={Rocket} />
-        <StatTile label="Investidores" value={investidores ?? 0} icon={Landmark} tone="gold" />
-        <StatTile label="Encontros agendados" value={encontros ?? 0} icon={CalendarRange} tone="petrol" />
-        <StatTile
-          label="Matching"
-          value={config?.matching_gerado_em ? "Gerado" : "Pendente"}
-          hint={config?.agenda_publicada ? "agenda publicada" : "não publicada"}
-          icon={config?.agenda_publicada ? CheckCircle2 : Users}
-        />
-      </div>
-    </div>
-  );
-}

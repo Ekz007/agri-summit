@@ -5,7 +5,7 @@
 export function Hills({ className }: { className?: string }) {
   return (
     <div className={`pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden ${className ?? ""}`} aria-hidden>
-      <svg viewBox="0 0 1440 420" preserveAspectRatio="none" className="block h-[240px] w-full sm:h-[320px]">
+      <svg viewBox="0 0 1440 420" preserveAspectRatio="none" className="block h-[340px] w-full sm:h-[480px] lg:h-[560px]">
         <defs>
           <linearGradient id="h-far" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stopColor="#147d92" stopOpacity="0.5" />

@@ -45,12 +45,13 @@ export function StatTile({
   value: string | number;
   hint?: string;
   icon?: React.ElementType;
-  tone?: "green" | "gold" | "petrol";
+  tone?: "green" | "gold" | "petrol" | "ocean";
 }) {
   const tones = {
     green: "text-green-400 bg-green-500/15",
     gold: "text-gold-400 bg-gold-500/15",
     petrol: "text-petrol-500 bg-petrol-500/15",
+    ocean: "text-sky-400 bg-ocean-600/25",
   } as const;
   return (
     <div className="surface rounded-2xl p-5">
@@ -96,13 +97,14 @@ export function Badge({
   tone = "neutral",
 }: {
   children: React.ReactNode;
-  tone?: "neutral" | "green" | "gold" | "red";
+  tone?: "neutral" | "green" | "gold" | "red" | "ocean";
 }) {
   const tones = {
     neutral: "bg-white/8 text-cream/75 border-white/10",
     green: "bg-green-500/12 text-green-300 border-green-500/25",
     gold: "bg-gold-500/12 text-gold-300 border-gold-500/25",
     red: "bg-red-500/12 text-red-300 border-red-500/25",
+    ocean: "bg-ocean-600/20 text-sky-400 border-ocean-500/30",
   } as const;
   return (
     <span

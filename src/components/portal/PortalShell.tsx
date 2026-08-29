@@ -67,13 +67,13 @@ export function PortalShell({
             href={item.href}
             onClick={() => setOpen(false)}
             className={cn(
-              "flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors",
+              "flex items-center gap-3 rounded-xl border-l-2 px-3.5 py-2.5 text-sm font-medium transition-colors",
               active
-                ? "bg-green-500/15 text-cream"
-                : "text-cream/65 hover:bg-white/5 hover:text-cream"
+                ? "border-gold-400 bg-gold-500/10 text-cream"
+                : "border-transparent text-cream/65 hover:bg-white/5 hover:text-cream"
             )}
           >
-            <item.icon className={cn("h-4.5 w-4.5", active && "text-green-400")} />
+            <item.icon className={cn("h-4.5 w-4.5", active && "text-gold-400")} />
             {item.label}
           </Link>
         );
@@ -82,9 +82,9 @@ export function PortalShell({
   );
 
   return (
-    <div className="relative min-h-screen bg-forest-900 text-cream">
-      {/* roots spreading across the platform */}
-      <OrganicBg variant="soft" className="fixed inset-0 opacity-[0.18]" />
+    <div className="portal-theme relative min-h-screen bg-forest-900 text-cream">
+      {/* roots spreading across the platform — blue base, golden root */}
+      <OrganicBg variant="hero" className="fixed inset-0 opacity-[0.35]" />
       {/* Top bar (mobile) */}
       <div className="sticky top-0 z-40 flex items-center justify-between border-b border-white/10 bg-forest-950/80 px-4 py-3 backdrop-blur-xl lg:hidden">
         <Link href="/portal">
@@ -121,7 +121,7 @@ export function PortalShell({
           <div className="mt-6">
             <div className="mb-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3.5">
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-green-500/20 font-display font-700 text-green-300">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500/20 font-display font-700 text-gold-400">
                   {name.charAt(0).toUpperCase()}
                 </div>
                 <div className="min-w-0">

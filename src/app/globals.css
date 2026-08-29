@@ -210,6 +210,19 @@ body {
   transform: none;
 }
 
+/* Portal theme — deep blue base with gold accents; retunes every token in scope */
+.portal-theme {
+  --forest-950: #04202b;
+  --forest-900: #07303d;
+  --forest-800: #0b4150;
+  --forest-700: #0e5364;
+  --background: var(--forest-900);
+}
+.portal-theme ::selection {
+  background: var(--gold-400);
+  color: var(--ink);
+}
+
 /* Film grain — kills the flat AI-gradient look */
 .grain::before {
   content: "";
@@ -224,11 +237,11 @@ body {
 /* Material-hills style layered drift */
 @keyframes hill-drift-a {
   0%, 100% { transform: translateX(0) scaleY(1); }
-  50% { transform: translateX(-2.5%) scaleY(1.04); }
+  50% { transform: translateX(-5%) scaleY(1.12); }
 }
 @keyframes hill-drift-b {
   0%, 100% { transform: translateX(0) scaleY(1); }
-  50% { transform: translateX(2%) scaleY(0.97); }
+  50% { transform: translateX(4.5%) scaleY(0.9); }
 }
 .hill-a { animation: hill-drift-a 18s ease-in-out infinite; transform-origin: bottom; }
 .hill-b { animation: hill-drift-b 24s ease-in-out infinite; transform-origin: bottom; }

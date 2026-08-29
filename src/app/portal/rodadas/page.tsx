@@ -12,18 +12,34 @@ export default async function RodadasPage() {
   const role = session?.profile?.role ?? "startup";
 
   if (role === "admin" || role === "staff") {
+    const { createAdminClient } = await import("@/lib/supabase/admin");
+    const { AdminRodadasMap } = await import("@/components/portal/AdminRodadasMap");
+    const db = createAdminClient();
+    const { data: rows } = await db
+      .from("agenda")
+      .select("id,dia,mesa_numero,score,status,rodadas(ordem,inicio),investidores(nome),startups(nome)")
+      .order("dia");
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const mapped = (rows ?? []).map((r: any) => ({
+      id: r.id,
+      dia: r.dia,
+      ordem: r.rodadas?.ordem ?? 0,
+      inicio: r.rodadas?.inicio ?? "",
+      mesa: r.mesa_numero,
+      investidor: r.investidores?.nome ?? "?",
+      startup: r.startups?.nome ?? "?",
+      score: r.score,
+      status: r.status,
+    }));
+
     return (
       <div>
-        <PageHeader title="Rodadas de Negócio" subtitle="Visão da organização." />
-        <Card>
-          <p className="text-cream/70">
-            Como administrador, gere e publique a agenda no painel de{" "}
-            <a href="/portal/admin" className="text-green-300 hover:text-green-200">
-              Administração
-            </a>
-            . A visão individual (agenda pessoal) é exibida para startups e investidores.
-          </p>
-        </Card>
+        <PageHeader
+          title="Rodadas de Negócio"
+          subtitle="Mapa completo da organização: mesas, encontros e status por rodada."
+        />
+        <AdminRodadasMap rows={mapped} />
       </div>
     );
   }
