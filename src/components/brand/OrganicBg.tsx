@@ -59,24 +59,31 @@ export function OrganicBg({
         />
 
         {variant === "hero" && (
-          <>
-            {/* golden root */}
-            <path
-              d="M1240 -40 C 1180 240, 1360 420, 1240 700 C 1180 840, 1320 900, 1400 940"
-              stroke="url(#og-gold)"
-              strokeWidth="70"
-              strokeLinecap="round"
-              fill="none"
-            />
-            <path
-              d="M1240 380 C 1120 420, 1060 560, 940 600"
-              stroke="url(#og-gold)"
-              strokeWidth="34"
-              strokeLinecap="round"
-              fill="none"
-              opacity="0.75"
-            />
-          </>
+          /* raiz dourada: tronco fino que afina + ramificações e radículas */
+          <g stroke="url(#og-gold)" fill="none" strokeLinecap="round">
+            {/* raiz principal (afinando ao descer) */}
+            <path d="M1245 -40 C 1215 160, 1290 330, 1235 540" strokeWidth="9" />
+            <path d="M1235 540 C 1200 680, 1275 810, 1250 950" strokeWidth="5.5" />
+
+            {/* ramificações primárias */}
+            <path d="M1232 170 C 1140 215, 1075 295, 1000 330" strokeWidth="3.5" />
+            <path d="M1262 300 C 1330 355, 1375 425, 1425 465" strokeWidth="3.5" />
+            <path d="M1240 470 C 1155 530, 1110 610, 1050 650" strokeWidth="3" />
+            <path d="M1255 650 C 1320 705, 1355 770, 1395 815" strokeWidth="2.5" />
+
+            {/* ramificações secundárias */}
+            <path d="M1000 330 C 950 352, 918 402, 872 424" strokeWidth="2" />
+            <path d="M1050 650 C 1010 678, 990 726, 952 750" strokeWidth="1.8" />
+            <path d="M1425 465 C 1452 488, 1462 528, 1482 550" strokeWidth="1.8" />
+            <path d="M1075 295 C 1040 275, 1020 240, 985 225" strokeWidth="1.6" />
+
+            {/* radículas */}
+            <path d="M872 424 C 845 435, 828 462, 800 472" strokeWidth="1.2" opacity="0.8" />
+            <path d="M952 750 C 928 762, 915 786, 892 796" strokeWidth="1.2" opacity="0.8" />
+            <path d="M1330 355 C 1352 335, 1380 328, 1400 310" strokeWidth="1.4" opacity="0.8" />
+            <path d="M1155 530 C 1130 518, 1112 492, 1085 482" strokeWidth="1.3" opacity="0.8" />
+            <path d="M1215 160 C 1190 130, 1188 95, 1168 68" strokeWidth="1.5" opacity="0.8" />
+          </g>
         )}
 
       </svg>
