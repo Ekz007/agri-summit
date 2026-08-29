@@ -25,8 +25,8 @@
   --gold-500: #d9b15a;
   --gold-400: #e6c574;
   --gold-300: #f0d79a;
-  --cream: #f4f1e6;
-  --cream-dim: #e7e2d1;
+  --cream: #f9f7ef;
+  --cream-dim: #ece8da;
   --ink: #06231b;
 
   --background: var(--forest-900);
@@ -216,6 +216,8 @@ body {
   --forest-900: #0f5468;
   --forest-800: #17657c;
   --forest-700: #1e768f;
+  --cream: #ffffff;
+  --cream-dim: #eef3f5;
   --background: var(--forest-900);
   background:
     radial-gradient(90% 60% at 50% 0%, rgba(86, 183, 199, 0.35), transparent 70%),
@@ -243,10 +245,26 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-/* Neon icons — glow that follows the icon's own color */
-.neon-icon {
-  filter: drop-shadow(0 0 4px currentColor)
-    drop-shadow(0 0 12px color-mix(in oklab, currentColor 55%, transparent));
+/* Gold underline on hover — replaces the icon neon */
+.u-gold {
+  position: relative;
+}
+.u-gold::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -3px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold-300), var(--gold-500));
+  box-shadow: 0 0 8px rgba(230, 197, 116, 0.6);
+  transition: right 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.u-gold:hover::after,
+a:hover > .u-gold::after,
+button:hover > .u-gold::after {
+  right: 0;
 }
 
 /* Neon blue traces — animated dashes with glow */

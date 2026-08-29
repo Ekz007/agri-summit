@@ -46,7 +46,7 @@ export function SiteNav() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-cream/75 transition-colors hover:text-cream"
+              className="u-gold text-sm text-cream/75 transition-colors hover:text-cream"
             >
               {l.label}
             </a>

@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   FolderOpen,
+  Gift,
   CalendarRange,
   UserCog,
   Settings2,
@@ -49,6 +50,7 @@ export function PortalShell({
   const nav = [
     { href: "/portal", label: "Início", icon: LayoutDashboard, exact: true },
     { href: "/portal/arquivos", label: "Arquivos", icon: FolderOpen },
+    { href: "/portal/beneficios", label: "Benefícios", icon: Gift },
     { href: "/portal/rodadas", label: "Rodadas", icon: CalendarRange },
     { href: "/portal/perfil", label: "Meu perfil", icon: UserCog },
     ...(isAdmin
@@ -81,11 +83,11 @@ export function PortalShell({
           >
             <item.icon
               className={cn(
-                "h-4.5 w-4.5 neon-icon",
+                "h-4.5 w-4.5",
                 active ? "text-gold-400" : "text-sky-400/90"
               )}
             />
-            {item.label}
+            <span className="u-gold">{item.label}</span>
           </Link>
         );
       })}
@@ -155,9 +157,9 @@ export function PortalShell({
                   )}
                 >
                   {viewingAsUser ? (
-                    <ShieldCheck className="h-4.5 w-4.5 neon-icon text-gold-400" />
+                    <ShieldCheck className="h-4.5 w-4.5 text-gold-400" />
                   ) : (
-                    <Eye className="h-4.5 w-4.5 neon-icon text-sky-400/90" />
+                    <Eye className="h-4.5 w-4.5 text-sky-400/90" />
                   )}
                   {viewingAsUser ? "Voltar à visão admin" : "Ver como participante"}
                 </button>
