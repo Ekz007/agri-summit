@@ -87,6 +87,55 @@ export async function gerarMatching() {
   return { ok: true, stats: result.stats };
 }
 
+// ---- Agenda do evento ----
+export async function createPalestrante(formData: FormData) {
+  await requireAdmin();
+  const db = createAdminClient();
+  const { error } = await db.from("palestrantes").insert({
+    nome: String(formData.get("nome") || "").trim(),
+    cargo: String(formData.get("cargo") || "") || null,
+    empresa: String(formData.get("empresa") || "") || null,
+    bio: String(formData.get("bio") || "") || null,
+    destaque: formData.get("destaque") === "on",
+  });
+  revalidatePath("/portal/agenda");
+  return { ok: !error, error: error?.message };
+}
+
+export async function deletePalestrante(id: string) {
+  await requireAdmin();
+  const db = createAdminClient();
+  await db.from("palestrantes").delete().eq("id", id);
+  revalidatePath("/portal/agenda");
+  return { ok: true };
+}
+
+export async function createProgramacaoItem(formData: FormData) {
+  await requireAdmin();
+  const db = createAdminClient();
+  const palestranteId = String(formData.get("palestrante_id") || "");
+  const { error } = await db.from("programacao").insert({
+    dia: String(formData.get("dia") || "2027-06-15"),
+    inicio: String(formData.get("inicio") || "09:00"),
+    fim: String(formData.get("fim") || "") || null,
+    titulo: String(formData.get("titulo") || "").trim(),
+    local: String(formData.get("local") || "") || null,
+    trilha: String(formData.get("trilha") || "") || null,
+    palestrante_id: palestranteId || null,
+    destaque: formData.get("destaque") === "on",
+  });
+  revalidatePath("/portal/agenda");
+  return { ok: !error, error: error?.message };
+}
+
+export async function deleteProgramacaoItem(id: string) {
+  await requireAdmin();
+  const db = createAdminClient();
+  await db.from("programacao").delete().eq("id", id);
+  revalidatePath("/portal/agenda");
+  return { ok: true };
+}
+
 export async function setStartupStatus(id: string, status: string) {
   await requireAdmin();
   const db = createAdminClient();

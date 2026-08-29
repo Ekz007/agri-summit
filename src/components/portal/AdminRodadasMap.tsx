@@ -108,7 +108,7 @@ export function AdminRodadasMap({ rows }: { rows: AdminMeetingRow[] }) {
               <div className="overflow-x-auto border-t border-white/8 bg-forest-950/40 scroll-slim">
                 <table className="w-full min-w-[640px] text-sm">
                   <thead>
-                    <tr className="text-left text-xs uppercase tracking-wider text-cream/45">
+                    <tr className="text-left text-xs mono uppercase tracking-wider text-cream/45">
                       <th className="px-5 py-2.5 font-medium">Mesa</th>
                       <th className="px-3 py-2.5 font-medium">Investidor</th>
                       <th className="px-3 py-2.5 font-medium">Startup</th>
@@ -119,12 +119,12 @@ export function AdminRodadasMap({ rows }: { rows: AdminMeetingRow[] }) {
                   <tbody className="divide-y divide-white/5">
                     {r.list.map((m) => (
                       <tr key={m.id}>
-                        <td className="px-5 py-2.5 font-display font-700 tabular-nums text-sky-400">
+                        <td className="px-5 py-2.5 font-display font-700 mono tabular-nums text-sky-400">
                           {m.mesa}
                         </td>
                         <td className="px-3 py-2.5 text-cream/85">{m.investidor}</td>
                         <td className="px-3 py-2.5 text-cream/85">{m.startup}</td>
-                        <td className="px-3 py-2.5 tabular-nums text-cream/70">{m.score}%</td>
+                        <td className="px-3 py-2.5 mono tabular-nums text-cream/70">{m.score}%</td>
                         <td className="px-5 py-2.5">
                           <Badge
                             tone={

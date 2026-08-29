@@ -61,7 +61,7 @@ export default async function ArquivosPage() {
                           <p className="mt-1.5 flex-1 text-sm text-cream/60">{a.descricao}</p>
                         )}
                         <div className="mt-4 flex items-center justify-between">
-                          <span className="text-xs uppercase tracking-wide text-cream/40">
+                          <span className="text-xs mono uppercase tracking-wide text-cream/40">
                             {a.tipo || "arquivo"} {a.tamanho ? `· ${a.tamanho}` : ""}
                           </span>
                           <a

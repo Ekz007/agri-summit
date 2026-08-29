@@ -93,7 +93,7 @@ export default async function AdminPage() {
               <div key={f.label}>
                 <div className="mb-1.5 flex items-center justify-between text-sm">
                   <span className="text-cream/70">{f.label}</span>
-                  <span className="font-display font-700 tabular-nums text-cream">{f.n}</span>
+                  <span className="font-display font-700 mono tabular-nums text-cream">{f.n}</span>
                 </div>
                 <div className="h-2 overflow-hidden rounded-full bg-white/8">
                   <div
@@ -116,12 +116,12 @@ export default async function AdminPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-xl border border-ocean-500/25 bg-ocean-600/10 p-4">
-              <p className="text-xs uppercase tracking-wider text-cream/50">Dia 1 · 15 jun</p>
+              <p className="text-xs mono uppercase tracking-wider text-cream/50">Dia 1 · 15 jun</p>
               <p className="mt-1 font-display font-800 text-3xl text-sky-400">{dia1}</p>
               <p className="text-xs text-cream/55">encontros agendados</p>
             </div>
             <div className="rounded-xl border border-ocean-500/25 bg-ocean-600/10 p-4">
-              <p className="text-xs uppercase tracking-wider text-cream/50">Dia 2 · 16 jun</p>
+              <p className="text-xs mono uppercase tracking-wider text-cream/50">Dia 2 · 16 jun</p>
               <p className="mt-1 font-display font-800 text-3xl text-sky-400">{dia2}</p>
               <p className="text-xs text-cream/55">encontros agendados</p>
             </div>

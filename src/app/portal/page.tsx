@@ -158,7 +158,7 @@ export default async function PortalHome() {
               "Nos 5 minutos de intervalo, registre a avaliação daquela conversa.",
             ].map((t, i) => (
               <li key={i} className="flex gap-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500/15 text-xs font-display font-700 text-green-300">
+                <span className="mono flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-500/15 text-xs font-500 text-green-300">
                   {i + 1}
                 </span>
                 {t}

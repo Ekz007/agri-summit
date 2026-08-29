@@ -56,7 +56,7 @@ export function StatTile({
   return (
     <div className="surface rounded-2xl p-5">
       <div className="flex items-center justify-between">
-        <span className="text-sm text-cream/60">{label}</span>
+        <span className="mono text-xs uppercase tracking-wider text-cream/60">{label}</span>
         {Icon && (
           <span className={cn("flex h-8 w-8 items-center justify-center rounded-lg", tones[tone])}>
             <Icon className="h-4 w-4" />

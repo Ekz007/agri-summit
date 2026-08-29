@@ -59,8 +59,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
 
   --radius-xl2: 1.25rem;
 }
@@ -86,18 +87,26 @@ body {
   color: var(--ink);
 }
 
-/* Display headings — tight, geometric */
+/* Display headings — Instrument Sans em 500 (não bold): visual mais leve */
 .font-display {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
+  font-weight: 500;
 }
 
-/* Numeric font-weight utilities (used with .font-display) */
+/* Numeric font-weight utilities */
 .font-400 { font-weight: 400; }
 .font-500 { font-weight: 500; }
 .font-600 { font-weight: 600; }
 .font-700 { font-weight: 700; }
 .font-800 { font-weight: 800; }
+
+/* Títulos display sempre em 500, mesmo com utilitários antigos */
+.font-display.font-600,
+.font-display.font-700,
+.font-display.font-800 {
+  font-weight: 500;
+}
 
 /* Utility: gold gradient text */
 .text-gold-gradient {
@@ -307,14 +316,21 @@ button:hover > .u-gold::after {
 .hill-b { animation: hill-drift-b 24s ease-in-out infinite; transform-origin: bottom; }
 .hill-c { animation: hill-drift-a 30s ease-in-out infinite reverse; transform-origin: bottom; }
 
-/* Editorial kicker */
+/* Editorial kicker — eyebrow em IBM Plex Mono */
 .kicker {
   display: inline-flex;
   align-items: baseline;
   gap: 0.75rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
+}
+
+/* Detalhes em mono: rótulos de KPI, números de passos, horários */
+.mono {
+  font-family: var(--font-mono);
 }
 .kicker::after {
   content: "";

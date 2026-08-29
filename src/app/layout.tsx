@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Sora, Manrope } from "next/font/google";
+import { Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
+// Fonte variável: um arquivo cobre 400–700; títulos usam 500.
+const instrument = Instrument_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-sora",
+  variable: "--font-instrument",
   display: "swap",
 });
 
-const manrope = Manrope({
+// Só nos detalhes: eyebrows, rótulos de KPI, números de passos, horários.
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-manrope",
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
   display: "swap",
 });
 
@@ -42,7 +43,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${sora.variable} ${manrope.variable}`}>
+    <html lang="pt-BR" className={`${instrument.variable} ${plexMono.variable}`}>
       <body>{children}</body>
     </html>
   );

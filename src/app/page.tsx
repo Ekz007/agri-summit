@@ -96,14 +96,14 @@ function Hero() {
             <div className="flex items-center gap-3">
               <CalendarDays className="h-6 w-6 text-sky-400" />
               <div>
-                <dt className="text-xs uppercase tracking-wider text-cream/50">Quando</dt>
+                <dt className="text-xs mono uppercase tracking-wider text-cream/50">Quando</dt>
                 <dd className="text-lg font-semibold">15 a 17 de junho de 2027</dd>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <MapPin className="h-6 w-6 text-sky-400" />
               <div>
-                <dt className="text-xs uppercase tracking-wider text-cream/50">Onde</dt>
+                <dt className="text-xs mono uppercase tracking-wider text-cream/50">Onde</dt>
                 <dd className="text-lg font-semibold">Royal Palm Hall · Campinas, SP</dd>
               </div>
             </div>
@@ -281,7 +281,7 @@ function RoundClockCard() {
       <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-green-500/20 blur-3xl" />
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs uppercase tracking-widest text-cream/50">Sua agenda · Dia 1</p>
+          <p className="text-xs mono uppercase tracking-widest text-cream/50">Sua agenda · Dia 1</p>
           <p className="font-display font-700 text-lg">Verde Bio · Startup</p>
         </div>
         <span className="rounded-md bg-green-500/15 px-3 py-1 text-xs font-semibold text-green-300">
@@ -298,7 +298,7 @@ function RoundClockCard() {
               (s.live ? "border-green-400/50 bg-green-500/10" : "border-white/10 bg-white/[0.03]")
             }
           >
-            <span className="font-display font-700 text-sm tabular-nums text-cream/90">{s.h}</span>
+            <span className="font-display font-700 text-sm mono tabular-nums text-cream/90">{s.h}</span>
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-semibold text-cream">{s.inv}</p>
               <p className="text-xs text-cream/55">{s.mesa}</p>
@@ -319,7 +319,7 @@ function RoundClockCard() {
         <span className="flex items-center gap-2 text-gold-300">
           <Timer className="h-4 w-4" /> Intervalo · troca de mesa
         </span>
-        <span className="font-display font-700 tabular-nums text-gold-300">05:00</span>
+        <span className="font-display font-700 mono tabular-nums text-gold-300">05:00</span>
       </div>
     </div>
   );

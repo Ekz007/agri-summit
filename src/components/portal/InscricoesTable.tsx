@@ -173,7 +173,7 @@ function Field({ k, v, wide = false }: { k: string; v?: string | null; wide?: bo
   if (!v) return null;
   return (
     <div className={wide ? "sm:col-span-2 lg:col-span-3" : undefined}>
-      <p className="text-xs uppercase tracking-wide text-cream/40">{k}</p>
+      <p className="text-xs mono uppercase tracking-wide text-cream/40">{k}</p>
       <p className="mt-0.5 text-cream/80">{v}</p>
     </div>
   );

@@ -5,7 +5,7 @@
 export function Hills({ className }: { className?: string }) {
   return (
     <div className={`pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden ${className ?? ""}`} aria-hidden>
-      <svg viewBox="0 0 1440 420" preserveAspectRatio="none" className="block h-[340px] w-full sm:h-[480px] lg:h-[560px]">
+      <svg viewBox="0 0 1440 420" preserveAspectRatio="none" className="block h-[400px] w-full sm:h-[540px] lg:h-[640px]">
         <defs>
           <linearGradient id="h-far" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stopColor="#147d92" stopOpacity="0.5" />
@@ -26,6 +26,14 @@ export function Hills({ className }: { className?: string }) {
           d="M0 320 C 260 250, 520 310, 760 270 C 1000 232, 1220 300, 1440 250 L 1440 420 L 0 420 Z" />
         <path className="hill-c" fill="url(#h-near)"
           d="M0 380 C 320 320, 640 380, 920 350 C 1160 326, 1320 370, 1440 340 L 1440 420 L 0 420 Z" />
+        {/* emenda suave com a seção seguinte */}
+        <rect x="0" y="392" width="1440" height="28" fill="url(#h-blend)" />
+        <defs>
+          <linearGradient id="h-blend" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor="#073a2c" stopOpacity="0" />
+            <stop offset="1" stopColor="#073a2c" stopOpacity="1" />
+          </linearGradient>
+        </defs>
       </svg>
     </div>
   );

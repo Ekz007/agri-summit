@@ -21,7 +21,7 @@ export function Realizadores({
   return (
     <div className={cn("my-10 flex flex-col items-center gap-7 px-8 py-4", className)}>
       {label && (
-        <span className="text-[0.7rem] uppercase tracking-[0.35em] text-cream/50">
+        <span className="text-[0.7rem] mono uppercase tracking-[0.35em] text-cream/50">
           {label}
         </span>
       )}

@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   FolderOpen,
   Gift,
+  CalendarDays,
   CalendarRange,
   UserCog,
   Settings2,
@@ -49,6 +50,7 @@ export function PortalShell({
 
   const nav = [
     { href: "/portal", label: "Início", icon: LayoutDashboard, exact: true },
+    { href: "/portal/agenda", label: "Agenda", icon: CalendarDays },
     { href: "/portal/arquivos", label: "Arquivos", icon: FolderOpen },
     { href: "/portal/beneficios", label: "Benefícios", icon: Gift },
     { href: "/portal/rodadas", label: "Rodadas", icon: CalendarRange },

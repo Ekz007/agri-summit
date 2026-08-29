@@ -50,7 +50,7 @@ export function MeetingCard({
         {/* time rail */}
         <div className="flex w-24 shrink-0 flex-col items-center justify-center gap-1 border-r border-white/8 bg-white/[0.02] p-4">
           <Clock className="h-4 w-4 text-green-400" />
-          <div className="font-display font-800 text-lg tabular-nums text-cream">
+          <div className="font-display font-800 text-lg mono tabular-nums text-cream">
             {fmt(m.inicio)}
           </div>
           <div className="text-[0.7rem] text-cream/45">até {fmt(m.fim)}</div>
