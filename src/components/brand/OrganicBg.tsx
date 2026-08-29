@@ -82,22 +82,26 @@ export function OrganicBg({
             <path d="M388 305 C 350 420, 352 540, 322 650" strokeWidth="8" />
             <path d="M322 650 C 300 740, 310 845, 292 950" strokeWidth="5" />
 
-            {/* ramo esquerdo superior */}
-            <path d="M430 180 C 358 248, 288 312, 214 376" strokeWidth="5" />
-            <path d="M214 376 C 162 422, 132 488, 112 552" strokeWidth="2.4" />
-            <path d="M288 312 C 240 350, 202 396, 162 438" strokeWidth="1.5" opacity="0.85" />
+            {/* ramo A — sai do tronco em (443,131), flui contínuo p/ esquerda-baixo */}
+            <path d="M443 131 C 380 200, 310 265, 240 330" strokeWidth="4.5" />
+            <path d="M240 330 C 185 382, 150 445, 128 510" strokeWidth="2.6" />
+            <path d="M128 510 C 114 552, 106 596, 100 640" strokeWidth="1.4" />
+            <path d="M240 330 C 205 350, 175 380, 148 412" strokeWidth="1.4" opacity="0.8" />
 
-            {/* ramo direito */}
-            <path d="M390 300 C 422 398, 442 488, 452 578" strokeWidth="4.5" />
-            <path d="M452 578 C 460 648, 464 718, 467 788" strokeWidth="2.2" />
-            <path d="M438 478 C 462 514, 478 546, 494 580" strokeWidth="1.5" opacity="0.85" />
+            {/* ramo B — sai da junção (388,305), direita-baixo */}
+            <path d="M388 305 C 424 395, 446 485, 456 575" strokeWidth="4" />
+            <path d="M456 575 C 463 645, 466 715, 468 785" strokeWidth="2.2" />
+            <path d="M468 785 C 469 825, 470 862, 470 900" strokeWidth="1.2" />
+            <path d="M456 575 C 470 615, 480 655, 488 695" strokeWidth="1.3" opacity="0.8" />
 
-            {/* ramo esquerdo inferior */}
-            <path d="M338 560 C 298 630, 268 700, 242 770" strokeWidth="3.5" />
-            <path d="M242 770 C 226 820, 218 866, 210 912" strokeWidth="1.8" />
+            {/* ramo C — sai do tronco em (352,479), esquerda-baixo */}
+            <path d="M352 479 C 312 550, 282 620, 256 690" strokeWidth="3.2" />
+            <path d="M256 690 C 238 742, 226 792, 216 842" strokeWidth="1.8" />
+            <path d="M216 842 C 210 872, 206 895, 202 915" strokeWidth="1" />
 
-            {/* ramo direito curto */}
-            <path d="M312 720 C 342 780, 356 836, 366 892" strokeWidth="2.6" />
+            {/* ramo D — sai da junção (322,650), direita-baixo */}
+            <path d="M322 650 C 350 712, 366 768, 376 828" strokeWidth="2.4" />
+            <path d="M376 828 C 381 862, 384 890, 386 915" strokeWidth="1.2" />
           </g>
         </svg>
       )}
@@ -117,24 +121,31 @@ export function OrganicBg({
             </linearGradient>
           </defs>
           <g stroke="url(#root-gold-b)" strokeLinecap="round" strokeLinejoin="round">
-            {/* tronco */}
+            {/* tronco — nasce no canto inferior esquerdo e sobe em diagonal */}
             <path d="M-10 920 C 45 830, 72 715, 112 595" strokeWidth="12" />
             <path d="M112 595 C 150 480, 148 360, 178 250" strokeWidth="8" />
             <path d="M178 250 C 200 160, 190 55, 208 -50" strokeWidth="5" />
 
-            {/* ramos */}
-            <path d="M70 720 C 142 652, 212 588, 286 524" strokeWidth="5" />
-            <path d="M286 524 C 338 478, 368 412, 388 348" strokeWidth="2.4" />
-            <path d="M212 588 C 260 550, 298 504, 338 462" strokeWidth="1.5" opacity="0.85" />
+            {/* ramo A — sai do tronco em (57,769), flui p/ direita-cima */}
+            <path d="M57 769 C 120 700, 190 635, 260 570" strokeWidth="4.5" />
+            <path d="M260 570 C 315 518, 350 455, 372 390" strokeWidth="2.6" />
+            <path d="M372 390 C 386 348, 394 304, 400 260" strokeWidth="1.4" />
+            <path d="M260 570 C 295 550, 325 520, 352 488" strokeWidth="1.4" opacity="0.8" />
 
-            <path d="M110 600 C 78 502, 58 412, 48 322" strokeWidth="4.5" />
-            <path d="M48 322 C 40 252, 36 182, 33 112" strokeWidth="2.2" />
-            <path d="M62 422 C 38 386, 22 354, 6 320" strokeWidth="1.5" opacity="0.85" />
+            {/* ramo B — sai da junção (112,595), esquerda-cima */}
+            <path d="M112 595 C 76 505, 54 415, 44 325" strokeWidth="4" />
+            <path d="M44 325 C 37 255, 34 185, 32 115" strokeWidth="2.2" />
+            <path d="M32 115 C 31 75, 30 38, 30 0" strokeWidth="1.2" />
+            <path d="M44 325 C 30 285, 20 245, 12 205" strokeWidth="1.3" opacity="0.8" />
 
-            <path d="M162 340 C 202 270, 232 200, 258 130" strokeWidth="3.5" />
-            <path d="M258 130 C 274 80, 282 34, 290 -12" strokeWidth="1.8" />
+            {/* ramo C — sai do tronco em (148,421), direita-cima */}
+            <path d="M148 421 C 188 350, 218 280, 244 210" strokeWidth="3.2" />
+            <path d="M244 210 C 262 158, 274 108, 284 58" strokeWidth="1.8" />
+            <path d="M284 58 C 290 28, 294 5, 298 -15" strokeWidth="1" />
 
-            <path d="M188 180 C 158 120, 144 64, 134 8" strokeWidth="2.6" />
+            {/* ramo D — sai da junção (178,250), esquerda-cima */}
+            <path d="M178 250 C 206 188, 222 132, 232 72" strokeWidth="2.4" />
+            <path d="M232 72 C 237 38, 240 10, 242 -15" strokeWidth="1.2" />
           </g>
         </svg>
       )}
