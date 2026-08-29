@@ -9,9 +9,11 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { href: "#manifesto", label: "Manifesto" },
-  { href: "#rodadas", label: "Rodadas de Negócio" },
-  { href: "#formato", label: "Formato" },
-  { href: "#numeros", label: "Números" },
+  { href: "#rodadas", label: "Rodadas" },
+  { href: "#experiencia", label: "Experiência" },
+  { href: "#programacao", label: "Programação" },
+  { href: "#palestrantes", label: "Palestrantes" },
+  { href: "#patrocinio", label: "Patrocínio" },
 ];
 
 export function SiteNav() {

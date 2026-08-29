@@ -47,8 +47,8 @@ export default async function PortalHome() {
   return (
     <div>
       <PageHeader
-        title={`Olá, ${name} 👋`}
-        subtitle="Este é o seu painel do Agri Summit Brazil 2027. Acompanhe sua agenda de rodadas e materiais aqui."
+        title={`Olá, ${name}`}
+        subtitle="Seu painel do Agri Summit Brazil 2027 · 15 a 17 de junho · Royal Palm Hall, Campinas. Acompanhe sua agenda de rodadas e materiais aqui."
       />
 
       {!profileDone && (

@@ -164,6 +164,14 @@ export function AuthPanel() {
         </Button>
       </form>
 
+      {tab === "login" && (
+        <p className="mt-4 text-center text-sm">
+          <a href="/esqueci-senha" className="text-cream/60 hover:text-cream">
+            Esqueci minha senha
+          </a>
+        </p>
+      )}
+
       <p className="mt-6 text-center text-xs text-cream/45">
         Ao continuar você concorda com os termos do Agri Summit Brazil 2027.
       </p>

@@ -87,6 +87,14 @@ export async function gerarMatching() {
   return { ok: true, stats: result.stats };
 }
 
+export async function setStartupStatus(id: string, status: string) {
+  await requireAdmin();
+  const db = createAdminClient();
+  const { error } = await db.from("startups").update({ status }).eq("id", id);
+  revalidatePath("/portal/admin/inscricoes");
+  return { ok: !error, error: error?.message };
+}
+
 export async function publicarAgenda(publicar: boolean) {
   await requireAdmin();
   const db = createAdminClient();

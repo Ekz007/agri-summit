@@ -19,7 +19,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Agri Summit Brazil 2027 · Produzindo a inovação. Inovando a produção.",
   description:
-    "A plataforma que conecta startups, investidores, indústria e ciência do agronegócio. 02 a 04 de março de 2027 · Centro de Eventos Anhembi, São Paulo. Realização CNA/SENAR, Sebrae e Juntos Pelo Agro.",
+    "O Brasil no centro da transformação global do agro. 15 a 17 de junho de 2027 · Royal Palm Hall, Campinas, SP. Realização CNA/SENAR, Sebrae e Juntos Pelo Agro.",
   keywords: [
     "Agri Summit Brazil",
     "agronegócio",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Agri Summit Brazil 2027",
     description:
-      "Onde a inovação encontra aplicação real. Startups encontram escala, investidores encontram futuro.",
+      "O agro que move o futuro. Startups encontram escala, investidores encontram futuro.",
     type: "website",
     locale: "pt_BR",
   },

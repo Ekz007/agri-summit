@@ -9,6 +9,7 @@ import {
   CalendarRange,
   UserCog,
   Settings2,
+  ClipboardList,
   LogOut,
   Menu,
   X,
@@ -45,7 +46,10 @@ export function PortalShell({
     { href: "/portal/rodadas", label: "Rodadas", icon: CalendarRange },
     { href: "/portal/perfil", label: "Meu perfil", icon: UserCog },
     ...(isAdmin
-      ? [{ href: "/portal/admin", label: "Administração", icon: Settings2 }]
+      ? [
+          { href: "/portal/admin", label: "Administração", icon: Settings2, exact: true },
+          { href: "/portal/admin/inscricoes", label: "Inscrições", icon: ClipboardList },
+        ]
       : []),
   ];
 

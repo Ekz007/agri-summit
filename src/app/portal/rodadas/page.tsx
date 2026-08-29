@@ -149,7 +149,7 @@ export default async function RodadasPage() {
                   {meetings.filter((m) => m.dia === dia).length} encontros
                 </Badge>
                 <span className="text-sm text-cream/45">
-                  {dia === 1 ? "02 de março" : "03 de março"} · 2027
+                  {dia === 1 ? "15 de junho" : "16 de junho"} · 2027
                 </span>
               </div>
               <div className="grid gap-4 lg:grid-cols-2">
