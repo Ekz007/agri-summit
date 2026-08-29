@@ -262,7 +262,7 @@ function SubmitBtn({ label }: { label: string }) {
   return (
     <button
       type="submit"
-      className="neon-green rounded-full px-6 py-2.5 text-sm font-semibold disabled:opacity-50"
+      className="neon-gold rounded-full px-6 py-2.5 text-sm font-semibold disabled:opacity-50"
     >
       {label}
     </button>

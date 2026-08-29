@@ -75,7 +75,7 @@ export function AuthPanel() {
             }}
             className={cn(
               "rounded-full py-2.5 text-sm font-semibold transition-all",
-              tab === t ? "neon-green" : "text-cream/70 hover:text-cream"
+              tab === t ? "neon-gold" : "text-cream/70 hover:text-cream"
             )}
           >
             {t === "login" ? "Entrar" : "Inscreva-se"}

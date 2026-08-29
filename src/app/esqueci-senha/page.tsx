@@ -76,7 +76,7 @@ export default function EsqueciSenhaPage() {
             <button
               type="submit"
               disabled={loading}
-              className="mt-5 flex w-full items-center justify-center gap-2 rounded-full neon-green px-6 py-3 text-sm font-semibold disabled:opacity-50"
+              className="mt-5 flex w-full items-center justify-center gap-2 rounded-full neon-gold px-6 py-3 text-sm font-semibold disabled:opacity-50"
             >
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
               Enviar link

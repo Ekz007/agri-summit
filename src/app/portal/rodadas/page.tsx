@@ -139,7 +139,7 @@ export default async function RodadasPage() {
           action={
             <a
               href="/portal/perfil"
-              className="rounded-full neon-green px-5 py-2.5 text-sm font-semibold"
+              className="rounded-full neon-gold px-5 py-2.5 text-sm font-semibold"
             >
               Completar perfil
             </a>
