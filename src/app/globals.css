@@ -254,6 +254,23 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
+/* Neon gold — CTA dourado com glow */
+.neon-gold {
+  background: linear-gradient(180deg, #f0d79a, #d9b15a);
+  color: var(--ink);
+  box-shadow:
+    0 0 14px rgba(230, 197, 116, 0.55),
+    0 0 36px rgba(217, 177, 90, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+.neon-gold:hover {
+  box-shadow:
+    0 0 20px rgba(230, 197, 116, 0.85),
+    0 0 56px rgba(217, 177, 90, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
 /* Gold underline on hover — replaces the icon neon */
 .u-gold {
   position: relative;
