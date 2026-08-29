@@ -11,6 +11,19 @@ export async function signOut() {
   redirect("/login");
 }
 
+/** Admin alterna entre visão admin e visão de participante. */
+export async function toggleView() {
+  const { cookies } = await import("next/headers");
+  const store = await cookies();
+  const atual = store.get("asb_view")?.value;
+  store.set("asb_view", atual === "participante" ? "admin" : "participante", {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 30,
+  });
+  revalidatePath("/portal");
+  redirect("/portal");
+}
+
 function arr(v: FormDataEntryValue | null): string[] {
   if (!v) return [];
   return String(v)

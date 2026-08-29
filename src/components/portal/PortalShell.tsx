@@ -10,6 +10,8 @@ import {
   UserCog,
   Settings2,
   ClipboardList,
+  Eye,
+  ShieldCheck,
   LogOut,
   Menu,
   X,
@@ -18,7 +20,7 @@ import { Logo } from "@/components/brand/Logo";
 import { OrganicBg } from "@/components/brand/OrganicBg";
 import { cn } from "@/lib/utils";
 import type { Profile, UserRole } from "@/lib/supabase/types";
-import { signOut } from "@/app/portal/actions";
+import { signOut, toggleView } from "@/app/portal/actions";
 
 const roleLabel: Record<UserRole, string> = {
   startup: "Startup",
@@ -30,15 +32,19 @@ const roleLabel: Record<UserRole, string> = {
 export function PortalShell({
   profile,
   email,
+  realRole,
   children,
 }: {
   profile: Profile | null;
   email: string;
+  realRole?: UserRole | null;
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const isAdmin = profile?.role === "admin" || profile?.role === "staff";
+  const isRealAdmin = realRole === "admin" || realRole === "staff";
+  const viewingAsUser = isRealAdmin && !isAdmin;
 
   const nav = [
     { href: "/portal", label: "Início", icon: LayoutDashboard, exact: true },
@@ -73,7 +79,12 @@ export function PortalShell({
                 : "border-transparent text-cream/65 hover:bg-white/5 hover:text-cream"
             )}
           >
-            <item.icon className={cn("h-4.5 w-4.5", active && "text-gold-400")} />
+            <item.icon
+              className={cn(
+                "h-4.5 w-4.5 neon-icon",
+                active ? "text-gold-400" : "text-sky-400/90"
+              )}
+            />
             {item.label}
           </Link>
         );
@@ -132,6 +143,26 @@ export function PortalShell({
                 </div>
               </div>
             </div>
+            {isRealAdmin && (
+              <form action={toggleView}>
+                <button
+                  type="submit"
+                  className={cn(
+                    "mb-1.5 flex w-full items-center gap-3 rounded-xl border px-3.5 py-2.5 text-sm font-medium transition-colors",
+                    viewingAsUser
+                      ? "border-gold-400/40 bg-gold-500/10 text-gold-300 hover:bg-gold-500/20"
+                      : "border-white/10 text-cream/70 hover:bg-white/5 hover:text-cream"
+                  )}
+                >
+                  {viewingAsUser ? (
+                    <ShieldCheck className="h-4.5 w-4.5 neon-icon text-gold-400" />
+                  ) : (
+                    <Eye className="h-4.5 w-4.5 neon-icon text-sky-400/90" />
+                  )}
+                  {viewingAsUser ? "Voltar à visão admin" : "Ver como participante"}
+                </button>
+              </form>
+            )}
             <form action={signOut}>
               <button
                 type="submit"

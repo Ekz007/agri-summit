@@ -8,9 +8,9 @@ export default async function PortalLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { profile, email } = await requireProfile();
+  const { profile, email, realRole } = await requireProfile();
   return (
-    <PortalShell profile={profile} email={email}>
+    <PortalShell profile={profile} email={email} realRole={realRole}>
       {children}
     </PortalShell>
   );

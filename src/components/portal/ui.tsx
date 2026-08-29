@@ -59,7 +59,7 @@ export function StatTile({
         <span className="text-sm text-cream/60">{label}</span>
         {Icon && (
           <span className={cn("flex h-8 w-8 items-center justify-center rounded-lg", tones[tone])}>
-            <Icon className="h-4 w-4" />
+            <Icon className="h-4 w-4 neon-icon" />
           </span>
         )}
       </div>
