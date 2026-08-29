@@ -65,7 +65,7 @@ function Hero() {
       <OrganicBg variant="hero" className="opacity-70" />
       <div className="absolute inset-0 bg-gradient-to-b from-ocean-900/50 via-transparent to-forest-900" />
 
-      <div className="relative z-[2] mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 pt-32 pb-36 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pb-32">
+      <div className="relative z-[2] mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 pt-32 pb-44 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pb-40">
         <div>
           <div className="animate-rise inline-flex items-center gap-2 border-l-2 border-gold-400 bg-white/[0.03] px-4 py-2 text-sm tracking-wide text-cream/90">
             O agro que move o futuro

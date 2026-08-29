@@ -19,7 +19,7 @@ export function Realizadores({
 }) {
   const h = size === "sm" ? 32 : 44;
   return (
-    <div className={cn("my-6 flex flex-col items-center gap-5 px-6 py-2", className)}>
+    <div className={cn("my-10 flex flex-col items-center gap-7 px-8 py-4", className)}>
       {label && (
         <span className="text-[0.7rem] uppercase tracking-[0.35em] text-cream/50">
           {label}
