@@ -101,6 +101,43 @@ export function OrganicBg({
           </g>
         </svg>
       )}
+
+      {variant === "hero" && (
+        /* segunda raiz — nasce do canto inferior esquerdo e sobe em diagonal */
+        <svg
+          className="absolute left-0 bottom-0 h-full opacity-60"
+          viewBox="0 0 500 900"
+          preserveAspectRatio="xMinYMid meet"
+          fill="none"
+        >
+          <defs>
+            <linearGradient id="root-gold-b" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0" stopColor="#e6c574" stopOpacity="0.85" />
+              <stop offset="1" stopColor="#d9b15a" stopOpacity="0.4" />
+            </linearGradient>
+          </defs>
+          <g stroke="url(#root-gold-b)" strokeLinecap="round" strokeLinejoin="round">
+            {/* tronco */}
+            <path d="M-10 920 C 45 830, 72 715, 112 595" strokeWidth="12" />
+            <path d="M112 595 C 150 480, 148 360, 178 250" strokeWidth="8" />
+            <path d="M178 250 C 200 160, 190 55, 208 -50" strokeWidth="5" />
+
+            {/* ramos */}
+            <path d="M70 720 C 142 652, 212 588, 286 524" strokeWidth="5" />
+            <path d="M286 524 C 338 478, 368 412, 388 348" strokeWidth="2.4" />
+            <path d="M212 588 C 260 550, 298 504, 338 462" strokeWidth="1.5" opacity="0.85" />
+
+            <path d="M110 600 C 78 502, 58 412, 48 322" strokeWidth="4.5" />
+            <path d="M48 322 C 40 252, 36 182, 33 112" strokeWidth="2.2" />
+            <path d="M62 422 C 38 386, 22 354, 6 320" strokeWidth="1.5" opacity="0.85" />
+
+            <path d="M162 340 C 202 270, 232 200, 258 130" strokeWidth="3.5" />
+            <path d="M258 130 C 274 80, 282 34, 290 -12" strokeWidth="1.8" />
+
+            <path d="M188 180 C 158 120, 144 64, 134 8" strokeWidth="2.6" />
+          </g>
+        </svg>
+      )}
     </div>
   );
 }
