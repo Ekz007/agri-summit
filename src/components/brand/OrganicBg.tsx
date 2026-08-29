@@ -79,21 +79,6 @@ export function OrganicBg({
           </>
         )}
 
-        {/* thin green filaments + nodes — animated "growing roots" */}
-        <g stroke="#9acb4e" strokeOpacity="0.5" strokeWidth="2" fill="none">
-          <path className="flow-line" d="M120 80 C 380 200, 300 460, 560 520" />
-          <path
-            className="flow-line"
-            style={{ animationDelay: "-6s" }}
-            d="M980 120 C 760 260, 900 520, 700 640"
-          />
-        </g>
-        <g fill="#9acb4e" fillOpacity="0.65">
-          <circle cx="120" cy="80" r="4" />
-          <circle cx="560" cy="520" r="4" />
-          <circle cx="980" cy="120" r="4" />
-          <circle cx="700" cy="640" r="4" />
-        </g>
       </svg>
     </div>
   );
