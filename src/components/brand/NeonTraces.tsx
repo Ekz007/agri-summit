@@ -18,12 +18,6 @@ export function NeonTraces({ className }: { className?: string }) {
           d="M-60 240 C 260 140, 520 400, 820 290 S 1360 140, 1560 300"
         />
         <path
-          className="neon-trace neon-trace-slow"
-          stroke="#2f9aa8"
-          strokeWidth="2"
-          d="M-80 640 C 300 540, 560 760, 900 650 S 1380 570, 1600 700"
-        />
-        <path
           className="neon-trace"
           style={{ animationDelay: "-12s" }}
           stroke="#56b7c7"

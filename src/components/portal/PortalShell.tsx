@@ -57,7 +57,7 @@ export function PortalShell({
   const name = profile?.full_name || email.split("@")[0];
 
   const NavLinks = () => (
-    <nav className="flex flex-col gap-1">
+    <nav className="flex flex-col gap-2.5">
       {nav.map((item) => {
         const active = item.exact
           ? pathname === item.href
@@ -68,7 +68,7 @@ export function PortalShell({
             href={item.href}
             onClick={() => setOpen(false)}
             className={cn(
-              "flex items-center gap-3 rounded-xl border-l-2 px-3.5 py-2.5 text-sm font-medium transition-colors",
+              "flex items-center gap-3.5 rounded-xl border-l-2 px-5 py-3.5 text-sm font-medium transition-colors",
               active
                 ? "border-gold-400 bg-gold-500/10 text-cream"
                 : "border-transparent text-cream/65 hover:bg-white/5 hover:text-cream"
