@@ -1,6 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
+import { PwaRegister } from "@/components/PwaRegister";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  themeColor: "#073a2c",
+  width: "device-width",
+  initialScale: 1,
+};
 
 // Fonte variável: um arquivo cobre 400–700; títulos usam 500.
 const instrument = Instrument_Sans({
@@ -30,6 +37,11 @@ export const metadata: Metadata = {
     "SENAR",
     "Sebrae",
   ],
+  appleWebApp: {
+    capable: true,
+    title: "Agri Summit",
+    statusBarStyle: "black-translucent",
+  },
   openGraph: {
     title: "Agri Summit Brazil 2027",
     description:
@@ -44,7 +56,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${instrument.variable} ${plexMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <PwaRegister />
+      </body>
     </html>
   );
 }
