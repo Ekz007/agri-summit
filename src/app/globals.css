@@ -146,6 +146,32 @@ body {
   to { transform: scaleX(1); }
 }
 
+/* Layers-style aurora drift */
+@keyframes drift-a {
+  0%   { transform: translate3d(-8%, -6%, 0) scale(1); }
+  33%  { transform: translate3d(6%, 4%, 0) scale(1.15); }
+  66%  { transform: translate3d(-4%, 8%, 0) scale(0.95); }
+  100% { transform: translate3d(-8%, -6%, 0) scale(1); }
+}
+@keyframes drift-b {
+  0%   { transform: translate3d(6%, 8%, 0) scale(1.1); }
+  50%  { transform: translate3d(-6%, -6%, 0) scale(0.9); }
+  100% { transform: translate3d(6%, 8%, 0) scale(1.1); }
+}
+@keyframes drift-c {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(8%, -6%, 0) scale(1.2); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+/* flowing dashed line — roots that "grow" */
+@keyframes flow-line {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes flow-loop {
+  0%   { stroke-dashoffset: 1200; }
+  100% { stroke-dashoffset: 0; }
+}
+
 .animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
 .animate-rise { animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .animate-pulse-ring { animation: pulse-ring 2.4s ease-out infinite; }
@@ -172,8 +198,28 @@ body {
   transform: none;
 }
 
+/* Aurora blobs */
+.aurora {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.55;
+  will-change: transform;
+}
+.aurora-a { animation: drift-a 22s ease-in-out infinite; }
+.aurora-b { animation: drift-b 28s ease-in-out infinite; }
+.aurora-c { animation: drift-c 19s ease-in-out infinite; }
+
+.flow-line {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: flow-loop 14s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-float-slow, .animate-pulse-ring, .shimmer { animation: none; }
+  .animate-float-slow, .animate-pulse-ring, .shimmer,
+  .aurora-a, .aurora-b, .aurora-c, .flow-line { animation: none; }
+  .flow-line { stroke-dashoffset: 0; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 

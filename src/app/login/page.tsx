@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { OrganicBg } from "@/components/brand/OrganicBg";
+import { AuroraBg } from "@/components/brand/AuroraBg";
 import { Logo } from "@/components/brand/Logo";
 import { Realizadores } from "@/components/brand/Realizadores";
 import { AuthPanel } from "@/components/auth/AuthPanel";
@@ -14,6 +15,7 @@ export default function LoginPage() {
     <main className="grid min-h-screen lg:grid-cols-2">
       {/* Brand side */}
       <aside className="relative hidden overflow-hidden bg-forest-950 lg:flex lg:flex-col lg:justify-between p-12">
+        <AuroraBg />
         <OrganicBg variant="hero" />
         <div className="relative">
           <Link href="/">

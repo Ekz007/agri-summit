@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { SiteNav } from "@/components/landing/SiteNav";
 import { OrganicBg } from "@/components/brand/OrganicBg";
+import { AuroraBg } from "@/components/brand/AuroraBg";
 import { Logo } from "@/components/brand/Logo";
 import { Realizadores } from "@/components/brand/Realizadores";
 import { ButtonLink } from "@/components/ui/Button";
@@ -43,6 +44,7 @@ export default function Home() {
 function Hero() {
   return (
     <section className="relative overflow-hidden vignette min-h-[100svh] flex items-center">
+      <AuroraBg />
       <OrganicBg variant="hero" />
       <div className="absolute inset-0 bg-gradient-to-b from-forest-950/40 via-transparent to-forest-900" />
 
@@ -446,6 +448,7 @@ function PortalCta() {
     <section className="relative overflow-hidden py-24">
       <div className="mx-auto max-w-6xl px-5">
         <div className="surface-solid relative overflow-hidden rounded-[2rem] p-10 text-center md:p-16">
+          <AuroraBg className="opacity-70" />
           <OrganicBg variant="hero" className="opacity-50" />
           <div className="relative">
             <Users className="mx-auto h-10 w-10 text-green-400" />
