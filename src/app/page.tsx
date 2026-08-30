@@ -62,7 +62,8 @@ function Hero() {
   return (
     <section className="grain relative overflow-hidden vignette min-h-[100svh] flex items-center">
       <AuroraBg />
-      <OrganicBg variant="hero" className="opacity-70" />
+      {/* sem a raiz dourada aqui: ela cruzava a imagem do hero */}
+      <OrganicBg variant="soft" className="opacity-70" />
       <div className="absolute inset-0 bg-gradient-to-b from-ocean-900/50 via-transparent to-forest-900" />
 
       <div className="relative z-[2] mx-auto grid w-full max-w-7xl grid-cols-1 items-stretch gap-10 px-5 pt-32 pb-44 lg:grid-cols-[1.15fr_1fr] lg:gap-12 lg:pb-40">
