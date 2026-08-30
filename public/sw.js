@@ -1,5 +1,5 @@
 /* Agri Summit Brazil 2027 — service worker */
-const CACHE = "asb-v2";
+const CACHE = "asb-v3";
 const OFFLINE = "/offline.html";
 const PRECACHE = [OFFLINE, "/icons/icon-192.png", "/brand/logo-cna.webp"];
 
