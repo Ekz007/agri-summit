@@ -84,7 +84,12 @@ export function OrganicBg({
               fill="none"
             />
             <path
-              d="M1240 380 C 1120 420, 1060 560, 940 600"
+              d={
+                variant === "hero-left"
+                  ? // braço por fora, acompanhando a borda (não cruza o conteúdo)
+                    "M1240 380 C 1330 460, 1362 560, 1382 670"
+                  : "M1240 380 C 1120 420, 1060 560, 940 600"
+              }
               stroke="url(#og-gold)"
               strokeWidth="34"
               strokeLinecap="round"
