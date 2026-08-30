@@ -14,6 +14,12 @@ export interface Profile {
   full_name: string | null;
   role: UserRole;
   telefone: string | null;
+  avatar_url: string | null;
+  cargo: string | null;
+  empresa: string | null;
+  cidade: string | null;
+  linkedin: string | null;
+  bio: string | null;
   created_at: string;
 }
 

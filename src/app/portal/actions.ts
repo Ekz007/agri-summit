@@ -37,6 +37,43 @@ function num(v: FormDataEntryValue | null): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+/** Dados pessoais do participante (nome, cargo, empresa, foto…). */
+export async function savePessoais(formData: FormData) {
+  const session = await getSessionProfile();
+  if (!session) redirect("/login");
+  const { createAdminClient } = await import("@/lib/supabase/admin");
+  const db = createAdminClient();
+
+  const payload: Record<string, string | null> = {
+    full_name: String(formData.get("full_name") || "").trim() || null,
+    cargo: String(formData.get("cargo") || "") || null,
+    empresa: String(formData.get("empresa") || "") || null,
+    cidade: String(formData.get("cidade") || "") || null,
+    telefone: String(formData.get("telefone") || "") || null,
+    linkedin: String(formData.get("linkedin") || "") || null,
+    bio: String(formData.get("bio") || "") || null,
+  };
+
+  // foto (opcional) — sobe pro bucket público de avatares
+  const foto = formData.get("foto");
+  if (foto instanceof File && foto.size > 0) {
+    if (foto.size > 3_500_000) return { ok: false, error: "Foto muito grande (máx. 3,5MB)." };
+    const ext = (foto.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "") || "jpg";
+    const path = `${session.userId}/avatar-${Date.now()}.${ext}`;
+    const buf = Buffer.from(await foto.arrayBuffer());
+    const { error: upErr } = await db.storage
+      .from("avatars")
+      .upload(path, buf, { contentType: foto.type || "image/jpeg", upsert: true });
+    if (upErr) return { ok: false, error: upErr.message };
+    const { data: pub } = db.storage.from("avatars").getPublicUrl(path);
+    payload.avatar_url = pub.publicUrl;
+  }
+
+  const { error } = await db.from("profiles").update(payload).eq("id", session.userId);
+  revalidatePath("/portal", "layout");
+  return { ok: !error, error: error?.message };
+}
+
 export async function saveStartup(formData: FormData) {
   const session = await getSessionProfile();
   if (!session) redirect("/login");

@@ -9,6 +9,7 @@ import {
   Gift,
   CalendarDays,
   CalendarRange,
+  Map,
   UserCog,
   Settings2,
   ClipboardList,
@@ -51,6 +52,7 @@ export function PortalShell({
   const nav = [
     { href: "/portal", label: "Início", icon: LayoutDashboard, exact: true },
     { href: "/portal/agenda", label: "Agenda", icon: CalendarDays },
+    { href: "/portal/mapa", label: "Mapa do Evento", icon: Map },
     { href: "/portal/arquivos", label: "Arquivos", icon: FolderOpen },
     { href: "/portal/beneficios", label: "Benefícios", icon: Gift },
     { href: "/portal/rodadas", label: "Rodadas", icon: CalendarRange },
@@ -136,9 +138,18 @@ export function PortalShell({
           <div className="mt-6">
             <div className="mb-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3.5">
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500/20 font-display font-700 text-gold-400">
-                  {name.charAt(0).toUpperCase()}
-                </div>
+                {profile?.avatar_url ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={profile.avatar_url}
+                    alt={name}
+                    className="h-9 w-9 rounded-full border border-gold-400/50 object-cover"
+                  />
+                ) : (
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500/20 font-display font-700 text-gold-400">
+                    {name.charAt(0).toUpperCase()}
+                  </div>
+                )}
                 <div className="min-w-0">
                   <p className="truncate text-sm font-semibold text-cream">{name}</p>
                   <p className="truncate text-xs text-cream/50">
