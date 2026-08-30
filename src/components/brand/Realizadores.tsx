@@ -2,9 +2,9 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const logos = [
-  { src: "/brand/logo-cna.png", alt: "CNA / SENAR", w: 238, h: 86 },
-  { src: "/brand/logo-sebrae.png", alt: "SEBRAE", w: 171, h: 86 },
-  { src: "/brand/logo-juntos.png", alt: "Juntos Pelo Agro", w: 81, h: 86 },
+  { src: "/brand/logo-cna.webp", alt: "CNA / SENAR", w: 238, h: 86 },
+  { src: "/brand/logo-sebrae.webp", alt: "SEBRAE", w: 171, h: 86 },
+  { src: "/brand/logo-juntos.webp", alt: "Juntos Pelo Agro", w: 81, h: 86 },
 ];
 
 /** Real partner logos (CNA/SENAR · SEBRAE · Juntos Pelo Agro), keyed from the deck. */
