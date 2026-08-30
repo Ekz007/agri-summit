@@ -98,8 +98,8 @@ export function PortalShell({
 
   return (
     <div className="portal-theme relative min-h-screen bg-forest-900 text-cream">
-      {/* roots spreading across the platform — blue base, golden root */}
-      <OrganicBg variant="hero" className="fixed inset-0 opacity-[0.35]" />
+      {/* raízes nas cores do Brasil espalhadas pelo fundo */}
+      <OrganicBg variant="brasil" className="fixed inset-0 opacity-[0.35]" />
       {/* Top bar (mobile) */}
       <div className="sticky top-0 z-40 flex items-center justify-between border-b border-white/15 bg-white/[0.06] px-4 py-3 backdrop-blur-2xl lg:hidden">
         <Link href="/portal">
