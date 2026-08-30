@@ -10,8 +10,9 @@ export function OrganicBg({
   variant = "hero",
 }: {
   className?: string;
-  variant?: "hero" | "soft" | "panel";
+  variant?: "hero" | "hero-left" | "soft" | "panel";
 }) {
+  const hasRoot = variant === "hero" || variant === "hero-left";
   return (
     <div className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)} aria-hidden>
       <svg
@@ -58,9 +59,10 @@ export function OrganicBg({
           opacity="0.8"
         />
 
-        {variant === "hero" && (
-          <>
-            {/* golden root — conceito original do deck */}
+        {hasRoot && (
+          /* golden root — conceito original do deck; "hero-left" espelha
+             pro lado esquerdo (pra não cruzar a imagem do hero) */
+          <g transform={variant === "hero-left" ? "translate(1440,0) scale(-1,1)" : undefined}>
             <path
               d="M1240 -40 C 1180 240, 1360 420, 1240 700 C 1180 840, 1320 900, 1400 940"
               stroke="url(#og-gold)"
@@ -76,7 +78,7 @@ export function OrganicBg({
               fill="none"
               opacity="0.75"
             />
-          </>
+          </g>
         )}
       </svg>
     </div>
