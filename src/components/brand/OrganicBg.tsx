@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Signature flowing-line motif from the Agri Summit concept —
- * roots / rivers / neural network in petrol, green and gold.
+ * teal ribbons + golden branching roots (deck style, thinner).
  * Purely decorative, sits behind content.
  */
 export function OrganicBg({
@@ -29,9 +29,16 @@ export function OrganicBg({
             <stop offset="0" stopColor="#2f9aa8" stopOpacity="0.5" />
             <stop offset="1" stopColor="#0e5a6b" stopOpacity="0.12" />
           </linearGradient>
-          <linearGradient id="og-gold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#e6c574" stopOpacity="0.9" />
-            <stop offset="1" stopColor="#d9b15a" stopOpacity="0.5" />
+          {/* dourado que esverdeia na ponta, como no conceito do deck */}
+          <linearGradient id="root-top" x1="1" y1="0" x2="0" y2="0">
+            <stop offset="0" stopColor="#e0b95f" stopOpacity="0.9" />
+            <stop offset="0.7" stopColor="#d9c470" stopOpacity="0.75" />
+            <stop offset="1" stopColor="#adc379" stopOpacity="0.55" />
+          </linearGradient>
+          <linearGradient id="root-bottom" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stopColor="#e0b95f" stopOpacity="0.8" />
+            <stop offset="0.7" stopColor="#d9c470" stopOpacity="0.65" />
+            <stop offset="1" stopColor="#adc379" stopOpacity="0.45" />
           </linearGradient>
           <radialGradient id="og-glow" cx="0.8" cy="0.1" r="0.9">
             <stop offset="0" stopColor="#1a9698" stopOpacity="0.45" />
@@ -58,65 +65,36 @@ export function OrganicBg({
           opacity="0.8"
         />
 
+        {variant === "hero" && (
+          <>
+            {/* raiz dourada superior — entra pela direita e varre a tela,
+                bifurcando em Y (estilo do deck, mais fina) */}
+            <g stroke="url(#root-top)" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M1470 110 C 1330 130, 1180 205, 990 250" strokeWidth="28" />
+              <path d="M990 250 C 840 283, 680 295, 540 285" strokeWidth="19" />
+              <path d="M540 285 C 440 278, 350 262, 260 240" strokeWidth="11" />
+              {/* braço que desce pela direita */}
+              <path d="M1240 172 C 1288 305, 1322 460, 1312 615" strokeWidth="20" />
+              <path d="M1312 615 C 1306 735, 1330 845, 1358 950" strokeWidth="13" />
+              {/* dedinho que desce no meio */}
+              <path d="M990 250 C 978 345, 998 440, 968 530" strokeWidth="10" />
+              <path d="M968 530 C 954 585, 958 640, 946 692" strokeWidth="6" />
+            </g>
+
+            {/* raiz dourada inferior — entra pela esquerda (espelho) */}
+            <g stroke="url(#root-bottom)" strokeLinecap="round" strokeLinejoin="round" opacity="0.85">
+              <path d="M-30 790 C 110 770, 260 695, 450 650" strokeWidth="24" />
+              <path d="M450 650 C 600 617, 760 605, 900 615" strokeWidth="16" />
+              <path d="M900 615 C 1000 622, 1090 638, 1180 660" strokeWidth="9" />
+              {/* braço que sobe pela esquerda */}
+              <path d="M200 728 C 152 595, 118 440, 128 285" strokeWidth="17" />
+              <path d="M128 285 C 134 165, 110 55, 82 -50" strokeWidth="11" />
+              {/* dedinho que sobe no meio */}
+              <path d="M450 650 C 462 555, 442 460, 472 370" strokeWidth="8" />
+            </g>
+          </>
+        )}
       </svg>
-
-      {variant === "hero" && (
-        /* Raiz dourada em SVG próprio, ancorado à direita: sempre aparece
-           inteira, em qualquer largura de container. Tronco que afila,
-           ramos tangentes fluindo para baixo. */
-        <svg
-          className="absolute right-0 top-0 h-full opacity-55"
-          viewBox="0 0 500 900"
-          preserveAspectRatio="xMaxYMid meet"
-          fill="none"
-        >
-          <defs>
-            <linearGradient id="root-gold" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor="#e6c574" stopOpacity="0.85" />
-              <stop offset="1" stopColor="#d9b15a" stopOpacity="0.45" />
-            </linearGradient>
-          </defs>
-                    <g stroke="url(#root-gold)" strokeLinecap="round" strokeLinejoin="round">
-            {/* tronco */}
-            <path d="M510 -20 C 455 70, 428 185, 388 305" strokeWidth="10" />
-            <path d="M388 305 C 352 410, 350 510, 330 600" strokeWidth="6" />
-            {/* ramo esquerdo */}
-            <path d="M443 131 C 380 200, 310 265, 240 330" strokeWidth="3.5" />
-            <path d="M240 330 C 195 375, 165 425, 145 480" strokeWidth="1.8" />
-            {/* ramo direito */}
-            <path d="M388 305 C 420 390, 438 470, 446 550" strokeWidth="2.8" />
-            <path d="M446 550 C 452 610, 455 665, 457 720" strokeWidth="1.4" />
-          </g>
-        </svg>
-      )}
-
-      {variant === "hero" && (
-        /* segunda raiz — nasce do canto inferior esquerdo e sobe em diagonal */
-        <svg
-          className="absolute left-0 bottom-0 h-full opacity-45"
-          viewBox="0 0 500 900"
-          preserveAspectRatio="xMinYMid meet"
-          fill="none"
-        >
-          <defs>
-            <linearGradient id="root-gold-b" x1="0" y1="1" x2="0" y2="0">
-              <stop offset="0" stopColor="#e6c574" stopOpacity="0.85" />
-              <stop offset="1" stopColor="#d9b15a" stopOpacity="0.4" />
-            </linearGradient>
-          </defs>
-                    <g stroke="url(#root-gold-b)" strokeLinecap="round" strokeLinejoin="round">
-            {/* tronco */}
-            <path d="M-10 920 C 45 830, 72 715, 112 595" strokeWidth="10" />
-            <path d="M112 595 C 148 490, 150 390, 170 300" strokeWidth="6" />
-            {/* ramo direito */}
-            <path d="M57 769 C 120 700, 190 635, 260 570" strokeWidth="3.5" />
-            <path d="M260 570 C 305 525, 335 475, 355 420" strokeWidth="1.8" />
-            {/* ramo esquerdo */}
-            <path d="M112 595 C 80 510, 62 430, 54 350" strokeWidth="2.8" />
-            <path d="M54 350 C 48 290, 45 235, 43 180" strokeWidth="1.4" />
-          </g>
-        </svg>
-      )}
     </div>
   );
 }
