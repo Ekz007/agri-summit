@@ -37,14 +37,14 @@ export default function LoginPage() {
         </div>
       </aside>
 
-      {/* Form side — degradê verde → azul com brilho dourado (cores do Brasil) */}
-      <section className="relative flex items-center justify-center overflow-hidden bg-[linear-gradient(155deg,#0a4d3a_0%,#0b4d55_45%,#0e5a6b_100%)] px-5 py-16">
+      {/* Form side — degradê discreto verde → azul, foco total no formulário */}
+      <section className="relative flex items-center justify-center overflow-hidden bg-[linear-gradient(160deg,#0a4436_0%,#0b4550_55%,#0d4f5e_100%)] px-5 py-16">
         <div
           className="pointer-events-none absolute inset-0"
           aria-hidden
           style={{
             background:
-              "radial-gradient(60% 45% at 85% 100%, rgba(217,177,90,0.28), transparent 70%), radial-gradient(50% 35% at 10% 0%, rgba(127,181,57,0.18), transparent 70%)",
+              "radial-gradient(55% 40% at 88% 105%, rgba(217,177,90,0.08), transparent 70%)",
           }}
         />
         <div className="relative z-[2] w-full max-w-md">
