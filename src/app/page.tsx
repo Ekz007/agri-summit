@@ -62,8 +62,9 @@ function Hero() {
   return (
     <section className="grain relative overflow-hidden vignette min-h-[100svh] flex items-center">
       <AuroraBg />
-      {/* raiz dourada espelhada à esquerda (não cruza a imagem, que fica à direita) */}
-      <OrganicBg variant="hero-left" className="opacity-70" />
+      {/* mobile: só as ondas; desktop: ondas + raiz na borda esquerda */}
+      <OrganicBg variant="soft" className="opacity-70 lg:hidden" />
+      <OrganicBg variant="hero-left" className="hidden opacity-70 lg:block" />
       <div className="absolute inset-0 bg-gradient-to-b from-ocean-900/50 via-transparent to-forest-900" />
 
       <div className="relative z-[2] mx-auto grid w-full max-w-7xl grid-cols-1 items-stretch gap-10 px-5 pt-32 pb-44 lg:grid-cols-[1.15fr_1fr] lg:gap-12 lg:pb-40">
